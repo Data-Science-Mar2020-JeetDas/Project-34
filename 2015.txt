@@ -1,0 +1,344 @@
+
+#******************* Question - : 2015 :  ********************
+
+
+df2015 = df[df.Period == 2015]
+print("\n\n--------------[ OUTPUT for 2015 ]----------------------\n\n")
+print(df2015[['Location','Period','Dim1','First Tooltip']])
+
+df2015_total = df2015[df2015.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2015 Total ]----------------------\n\n")
+print(df2015_total[['Location','Period','Dim1','First Tooltip']])
+
+df2015_urban = df2015[df2015.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2015 Urban ]----------------------\n\n")
+print(df2015_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2015_rural = df2015[df2015.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2015 Rural ]----------------------\n\n")
+print(df2015_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2015_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2015_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2015_rural['Location']))
+print(i2)
+
+#--------------- plot for 2015 ----------------------
+
+plt.title('Question - : 2015')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2015_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2015_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2015_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2015 ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+6                          Afghanistan    2015  Total          37.59
+7                          Afghanistan    2015  Urban          63.58
+8                          Afghanistan    2015  Rural          29.02
+45                             Algeria    2015  Total          83.56
+46                             Algeria    2015  Urban          87.88
+47                             Algeria    2015  Rural          73.07
+72                              Angola    2015  Total          26.38
+73                              Angola    2015  Urban          33.95
+74                              Angola    2015  Rural          13.23
+90                             Armenia    2015  Total          92.72
+91                             Armenia    2015  Urban          96.16
+92                             Armenia    2015  Rural          86.85
+140                         Azerbaijan    2015  Total          83.24
+153                         Bangladesh    2015  Total          34.41
+154                         Bangladesh    2015  Urban          51.09
+155                         Bangladesh    2015  Rural          25.71
+187                           Barbados    2015  Total          88.47
+201                             Belize    2015  Total          87.03
+202                             Belize    2015  Urban          87.76
+203                             Belize    2015  Rural          86.42
+240                              Benin    2015  Total          10.29
+241                              Benin    2015  Urban          15.84
+242                              Benin    2015  Rural           5.62
+321   Bolivia (Plurinational State of)    2015  Total          25.32
+322   Bolivia (Plurinational State of)    2015  Urban          28.12
+323   Bolivia (Plurinational State of)    2015  Rural          19.26
+342             Bosnia and Herzegovina    2015  Total          97.16
+343             Bosnia and Herzegovina    2015  Urban          98.50
+344             Bosnia and Herzegovina    2015  Rural          95.95
+372                       Burkina Faso    2015  Total          11.22
+                               ...     ...    ...            ...
+2399               Trinidad and Tobago    2015  Total          89.44
+2400               Trinidad and Tobago    2015  Urban          89.37
+2401               Trinidad and Tobago    2015  Rural          89.55
+2432                           Tunisia    2015  Total          81.74
+2433                           Tunisia    2015  Urban          92.33
+2434                           Tunisia    2015  Rural          59.18
+2468                      Turkmenistan    2015  Total          97.65
+2469                      Turkmenistan    2015  Urban          98.62
+2470                      Turkmenistan    2015  Rural          96.67
+2522                            Uganda    2015  Total          18.92
+2523                            Uganda    2015  Urban          31.27
+2524                            Uganda    2015  Rural          15.43
+2576       United Republic of Tanzania    2015  Total          47.63
+2577       United Republic of Tanzania    2015  Urban          63.08
+2578       United Republic of Tanzania    2015  Rural          40.48
+2594                           Vanuatu    2015  Total          25.15
+2595                           Vanuatu    2015  Urban          48.23
+2596                           Vanuatu    2015  Rural          17.47
+2621                          Viet Nam    2015  Total          85.70
+2622                          Viet Nam    2015  Urban          92.54
+2623                          Viet Nam    2015  Rural          82.21
+2660                             Yemen    2015  Total          49.13
+2661                             Yemen    2015  Urban          70.86
+2662                             Yemen    2015  Rural          37.54
+2687                            Zambia    2015  Total          13.72
+2688                            Zambia    2015  Urban          25.59
+2689                            Zambia    2015  Rural           5.16
+2711                          Zimbabwe    2015  Total          36.82
+2712                          Zimbabwe    2015  Urban          48.54
+2713                          Zimbabwe    2015  Rural          31.20
+
+[265 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2015 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+6                          Afghanistan    2015  Total          37.59
+45                             Algeria    2015  Total          83.56
+72                              Angola    2015  Total          26.38
+90                             Armenia    2015  Total          92.72
+140                         Azerbaijan    2015  Total          83.24
+153                         Bangladesh    2015  Total          34.41
+187                           Barbados    2015  Total          88.47
+201                             Belize    2015  Total          87.03
+240                              Benin    2015  Total          10.29
+321   Bolivia (Plurinational State of)    2015  Total          25.32
+342             Bosnia and Herzegovina    2015  Total          97.16
+372                       Burkina Faso    2015  Total          11.22
+426                            Burundi    2015  Total           6.14
+468                           Cambodia    2015  Total          66.00
+498                           Cameroon    2015  Total           9.26
+549                               Chad    2015  Total           5.77
+570                           Colombia    2015  Total          65.13
+582                            Comoros    2015  Total          15.57
+612                              Congo    2015  Total          47.74
+627                         Costa Rica    2015  Total          83.84
+660                      Côte d’Ivoire    2015  Total          19.19
+696                               Cuba    2015  Total          85.19
+720   Democratic Republic of the Congo    2015  Total           4.41
+762                 Dominican Republic    2015  Total          54.90
+786                            Ecuador    2015  Total          80.61
+810                              Egypt    2015  Total          88.34
+864                        El Salvador    2015  Total          90.55
+882                  Equatorial Guinea    2015  Total          24.64
+915                           Eswatini    2015  Total          24.00
+957                           Ethiopia    2015  Total           7.79
+                               ...     ...    ...            ...
+1851                           Nigeria    2015  Total          41.59
+1868                              Oman    2015  Total          97.40
+1877                          Pakistan    2015  Total          59.45
+1904                          Paraguay    2015  Total          79.53
+1931                       Philippines    2015  Total          78.41
+1949               Republic of Moldova    2015  Total          86.98
+1979                            Rwanda    2015  Total           4.23
+2030                       Saint Lucia    2015  Total          87.20
+2060             Sao Tome and Principe    2015  Total          41.49
+2084                           Senegal    2015  Total          23.85
+2126                      Sierra Leone    2015  Total          17.50
+2168                   Solomon Islands    2015  Total          35.61
+2189                           Somalia    2015  Total           9.79
+2210                      South Africa    2015  Total          43.74
+2228                             Sudan    2015  Total          23.37
+2279              Syrian Arab Republic    2015  Total          70.56
+2291                        Tajikistan    2015  Total          72.59
+2327                          Thailand    2015  Total          83.90
+2345                       Timor-Leste    2015  Total          28.03
+2363                              Togo    2015  Total          10.30
+2399               Trinidad and Tobago    2015  Total          89.44
+2432                           Tunisia    2015  Total          81.74
+2468                      Turkmenistan    2015  Total          97.65
+2522                            Uganda    2015  Total          18.92
+2576       United Republic of Tanzania    2015  Total          47.63
+2594                           Vanuatu    2015  Total          25.15
+2621                          Viet Nam    2015  Total          85.70
+2660                             Yemen    2015  Total          49.13
+2687                            Zambia    2015  Total          13.72
+2711                          Zimbabwe    2015  Total          36.82
+
+[90 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2015 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+7                          Afghanistan    2015  Urban          63.58
+46                             Algeria    2015  Urban          87.88
+73                              Angola    2015  Urban          33.95
+91                             Armenia    2015  Urban          96.16
+154                         Bangladesh    2015  Urban          51.09
+202                             Belize    2015  Urban          87.76
+241                              Benin    2015  Urban          15.84
+322   Bolivia (Plurinational State of)    2015  Urban          28.12
+343             Bosnia and Herzegovina    2015  Urban          98.50
+373                       Burkina Faso    2015  Urban          22.77
+427                            Burundi    2015  Urban          21.23
+469                           Cambodia    2015  Urban          88.24
+499                           Cameroon    2015  Urban          14.58
+550                               Chad    2015  Urban          17.67
+571                           Colombia    2015  Urban          72.81
+583                            Comoros    2015  Urban          17.87
+613                              Congo    2015  Urban          56.11
+628                         Costa Rica    2015  Urban          84.12
+661                      Côte d’Ivoire    2015  Urban          28.36
+697                               Cuba    2015  Urban          87.92
+721   Democratic Republic of the Congo    2015  Urban           7.35
+763                 Dominican Republic    2015  Urban          58.44
+787                            Ecuador    2015  Urban          83.62
+811                              Egypt    2015  Urban          92.33
+865                        El Salvador    2015  Urban          92.41
+883                  Equatorial Guinea    2015  Urban          26.45
+916                           Eswatini    2015  Urban          47.78
+958                           Ethiopia    2015  Urban          23.35
+976                             Gambia    2015  Urban          12.28
+1018                             Ghana    2015  Urban          44.65
+                               ...     ...    ...            ...
+1786                             Nepal    2015  Urban          71.50
+1852                           Nigeria    2015  Urban          52.85
+1878                          Pakistan    2015  Urban          83.25
+1905                          Paraguay    2015  Urban          84.47
+1932                       Philippines    2015  Urban          85.14
+1950               Republic of Moldova    2015  Urban          93.36
+1980                            Rwanda    2015  Urban          12.70
+2031                       Saint Lucia    2015  Urban          87.83
+2061             Sao Tome and Principe    2015  Urban          39.01
+2085                           Senegal    2015  Urban          41.83
+2127                      Sierra Leone    2015  Urban          24.88
+2169                   Solomon Islands    2015  Urban          58.93
+2190                           Somalia    2015  Urban          12.00
+2211                      South Africa    2015  Urban          52.56
+2229                             Sudan    2015  Urban          32.19
+2280              Syrian Arab Republic    2015  Urban          71.97
+2292                        Tajikistan    2015  Urban          87.59
+2328                          Thailand    2015  Urban          84.70
+2346                       Timor-Leste    2015  Urban          42.62
+2364                              Togo    2015  Urban          20.12
+2400               Trinidad and Tobago    2015  Urban          89.37
+2433                           Tunisia    2015  Urban          92.33
+2469                      Turkmenistan    2015  Urban          98.62
+2523                            Uganda    2015  Urban          31.27
+2577       United Republic of Tanzania    2015  Urban          63.08
+2595                           Vanuatu    2015  Urban          48.23
+2622                          Viet Nam    2015  Urban          92.54
+2661                             Yemen    2015  Urban          70.86
+2688                            Zambia    2015  Urban          25.59
+2712                          Zimbabwe    2015  Urban          48.54
+
+[87 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2015 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+8                          Afghanistan    2015  Rural          29.02
+47                             Algeria    2015  Rural          73.07
+74                              Angola    2015  Rural          13.23
+92                             Armenia    2015  Rural          86.85
+155                         Bangladesh    2015  Rural          25.71
+203                             Belize    2015  Rural          86.42
+242                              Benin    2015  Rural           5.62
+323   Bolivia (Plurinational State of)    2015  Rural          19.26
+344             Bosnia and Herzegovina    2015  Rural          95.95
+374                       Burkina Faso    2015  Rural           6.84
+428                            Burundi    2015  Rural           4.07
+470                           Cambodia    2015  Rural          59.66
+500                           Cameroon    2015  Rural           2.87
+551                               Chad    2015  Rural           2.31
+572                           Colombia    2015  Rural          34.84
+584                            Comoros    2015  Rural          14.65
+614                              Congo    2015  Rural          31.81
+629                         Costa Rica    2015  Rural          82.91
+662                      Côte d’Ivoire    2015  Rural          10.23
+698                               Cuba    2015  Rural          76.10
+722   Democratic Republic of the Congo    2015  Rural           2.22
+764                 Dominican Republic    2015  Rural          41.90
+788                            Ecuador    2015  Rural          75.40
+812                              Egypt    2015  Rural          85.36
+866                        El Salvador    2015  Rural          86.27
+884                  Equatorial Guinea    2015  Rural          20.29
+917                           Eswatini    2015  Rural          16.77
+959                           Ethiopia    2015  Rural           4.04
+977                             Gambia    2015  Rural           1.10
+1019                             Ghana    2015  Rural          36.58
+                               ...     ...    ...            ...
+1853                           Nigeria    2015  Rural          31.26
+1879                          Pakistan    2015  Rural          46.05
+1906                          Paraguay    2015  Rural          71.89
+1918                              Peru    2015  Rural          55.51
+1933                       Philippines    2015  Rural          72.62
+1951               Republic of Moldova    2015  Rural          82.26
+1981                            Rwanda    2015  Rural           2.49
+2032                       Saint Lucia    2015  Rural          87.06
+2062             Sao Tome and Principe    2015  Rural          47.31
+2086                           Senegal    2015  Rural           8.63
+2128                      Sierra Leone    2015  Rural          12.40
+2170                   Solomon Islands    2015  Rural          28.90
+2191                           Somalia    2015  Rural           8.10
+2212                      South Africa    2015  Rural          27.48
+2230                             Sudan    2015  Rural          18.85
+2281              Syrian Arab Republic    2015  Rural          69.03
+2293                        Tajikistan    2015  Rural          67.12
+2329                          Thailand    2015  Rural          83.17
+2347                       Timor-Leste    2015  Rural          21.93
+2365                              Togo    2015  Rural           3.73
+2401               Trinidad and Tobago    2015  Rural          89.55
+2434                           Tunisia    2015  Rural          59.18
+2470                      Turkmenistan    2015  Rural          96.67
+2524                            Uganda    2015  Rural          15.43
+2578       United Republic of Tanzania    2015  Rural          40.48
+2596                           Vanuatu    2015  Rural          17.47
+2623                          Viet Nam    2015  Rural          82.21
+2662                             Yemen    2015  Rural          37.54
+2689                            Zambia    2015  Rural           5.16
+2713                          Zimbabwe    2015  Rural          31.20
+
+[88 rows x 4 columns]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87]
