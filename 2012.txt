@@ -1,0 +1,344 @@
+
+#******************* Question - : 2012 :  ********************
+
+
+df2012 = df[df.Period == 2012]
+print("\n\n--------------[ OUTPUT for 2012 ]----------------------\n\n")
+print(df2012[['Location','Period','Dim1','First Tooltip']])
+
+df2012_total = df2012[df2012.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2012 Total ]----------------------\n\n")
+print(df2012_total[['Location','Period','Dim1','First Tooltip']])
+
+df2012_urban = df2012[df2012.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2012 Urban ]----------------------\n\n")
+print(df2012_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2012_rural = df2012[df2012.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2012 Rural ]----------------------\n\n")
+print(df2012_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2012_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2012_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2012_rural['Location']))
+print(i2)
+
+#--------------- plot for 2012 ----------------------
+
+plt.title('Question - : 2012')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2012_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2012_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2012_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2012 ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+15                         Afghanistan    2012  Total          37.37
+16                         Afghanistan    2012  Urban          63.58
+17                         Afghanistan    2012  Rural          29.02
+54                             Algeria    2012  Total          83.28
+55                             Algeria    2012  Urban          87.88
+56                             Algeria    2012  Rural          73.07
+81                              Angola    2012  Total          25.92
+82                              Angola    2012  Urban          33.95
+83                              Angola    2012  Rural          13.23
+99                             Armenia    2012  Total          90.76
+100                            Armenia    2012  Urban          95.50
+101                            Armenia    2012  Rural          82.60
+143                         Azerbaijan    2012  Total          83.24
+162                         Bangladesh    2012  Total          33.83
+163                         Bangladesh    2012  Urban          51.09
+164                         Bangladesh    2012  Rural          25.71
+190                           Barbados    2012  Total          88.47
+210                             Belize    2012  Total          82.45
+211                             Belize    2012  Urban          83.59
+212                             Belize    2012  Rural          81.51
+249                              Benin    2012  Total           8.26
+250                              Benin    2012  Urban          13.21
+251                              Benin    2012  Rural           4.35
+294                             Bhutan    2012  Total          79.62
+295                             Bhutan    2012  Urban          87.32
+296                             Bhutan    2012  Rural          75.22
+330   Bolivia (Plurinational State of)    2012  Total          25.23
+331   Bolivia (Plurinational State of)    2012  Urban          28.12
+332   Bolivia (Plurinational State of)    2012  Rural          19.26
+351             Bosnia and Herzegovina    2012  Total          97.13
+                               ...     ...    ...            ...
+2408               Trinidad and Tobago    2012  Total          89.44
+2409               Trinidad and Tobago    2012  Urban          89.37
+2410               Trinidad and Tobago    2012  Rural          89.55
+2441                           Tunisia    2012  Total          86.40
+2442                           Tunisia    2012  Urban          95.83
+2443                           Tunisia    2012  Rural          67.06
+2477                      Turkmenistan    2012  Total          92.40
+2478                      Turkmenistan    2012  Urban          95.44
+2479                      Turkmenistan    2012  Rural          89.46
+2531                            Uganda    2012  Total          15.53
+2532                            Uganda    2012  Urban          26.78
+2533                            Uganda    2012  Rural          12.65
+2585       United Republic of Tanzania    2012  Total          47.15
+2586       United Republic of Tanzania    2012  Urban          63.08
+2587       United Republic of Tanzania    2012  Rural          40.48
+2603                           Vanuatu    2012  Total          25.05
+2604                           Vanuatu    2012  Urban          48.23
+2605                           Vanuatu    2012  Rural          17.47
+2630                          Viet Nam    2012  Total          85.49
+2631                          Viet Nam    2012  Urban          92.54
+2632                          Viet Nam    2012  Rural          82.21
+2669                             Yemen    2012  Total          48.52
+2670                             Yemen    2012  Urban          70.86
+2671                             Yemen    2012  Rural          37.54
+2696                            Zambia    2012  Total          13.40
+2697                            Zambia    2012  Urban          25.59
+2698                            Zambia    2012  Rural           5.16
+2720                          Zimbabwe    2012  Total          36.89
+2721                          Zimbabwe    2012  Urban          48.54
+2722                          Zimbabwe    2012  Rural          31.20
+
+[252 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2012 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+15                         Afghanistan    2012  Total          37.37
+54                             Algeria    2012  Total          83.28
+81                              Angola    2012  Total          25.92
+99                             Armenia    2012  Total          90.76
+143                         Azerbaijan    2012  Total          83.24
+162                         Bangladesh    2012  Total          33.83
+190                           Barbados    2012  Total          88.47
+210                             Belize    2012  Total          82.45
+249                              Benin    2012  Total           8.26
+294                             Bhutan    2012  Total          79.62
+330   Bolivia (Plurinational State of)    2012  Total          25.23
+351             Bosnia and Herzegovina    2012  Total          97.13
+381                       Burkina Faso    2012  Total          10.22
+435                            Burundi    2012  Total           6.12
+477                           Cambodia    2012  Total          65.67
+507                           Cameroon    2012  Total           9.05
+522           Central African Republic    2012  Total          16.55
+558                               Chad    2012  Total           5.71
+591                            Comoros    2012  Total          15.56
+621                              Congo    2012  Total          47.41
+636                         Costa Rica    2012  Total          83.81
+669                      Côte d’Ivoire    2012  Total          18.96
+705                               Cuba    2012  Total          85.18
+729   Democratic Republic of the Congo    2012  Total           4.33
+771                 Dominican Republic    2012  Total          54.44
+795                            Ecuador    2012  Total          80.58
+819                              Egypt    2012  Total          83.90
+873                        El Salvador    2012  Total          90.40
+891                  Equatorial Guinea    2012  Total          24.54
+924                           Eswatini    2012  Total          23.86
+                               ...     ...    ...            ...
+1794                             Nepal    2012  Total          52.75
+1860                           Nigeria    2012  Total          41.03
+1886                          Pakistan    2012  Total          59.22
+1913                          Paraguay    2012  Total          79.43
+1940                       Philippines    2012  Total          78.34
+1958               Republic of Moldova    2012  Total          86.98
+1988                            Rwanda    2012  Total           3.65
+2039                       Saint Lucia    2012  Total          87.20
+2069             Sao Tome and Principe    2012  Total          41.74
+2099                            Serbia    2012  Total          97.72
+2135                      Sierra Leone    2012  Total          14.86
+2177                   Solomon Islands    2012  Total          35.19
+2198                           Somalia    2012  Total           9.72
+2219                      South Africa    2012  Total          43.35
+2237                             Sudan    2012  Total          23.30
+2252                          Suriname    2012  Total          67.80
+2300                        Tajikistan    2012  Total          72.46
+2336                          Thailand    2012  Total          83.87
+2354                       Timor-Leste    2012  Total          27.81
+2372                              Togo    2012  Total          10.05
+2408               Trinidad and Tobago    2012  Total          89.44
+2441                           Tunisia    2012  Total          86.40
+2477                      Turkmenistan    2012  Total          92.40
+2531                            Uganda    2012  Total          15.53
+2585       United Republic of Tanzania    2012  Total          47.15
+2603                           Vanuatu    2012  Total          25.05
+2630                          Viet Nam    2012  Total          85.49
+2669                             Yemen    2012  Total          48.52
+2696                            Zambia    2012  Total          13.40
+2720                          Zimbabwe    2012  Total          36.89
+
+[85 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2012 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+16                         Afghanistan    2012  Urban          63.58
+55                             Algeria    2012  Urban          87.88
+82                              Angola    2012  Urban          33.95
+100                            Armenia    2012  Urban          95.50
+163                         Bangladesh    2012  Urban          51.09
+211                             Belize    2012  Urban          83.59
+250                              Benin    2012  Urban          13.21
+295                             Bhutan    2012  Urban          87.32
+331   Bolivia (Plurinational State of)    2012  Urban          28.12
+352             Bosnia and Herzegovina    2012  Urban          98.50
+382                       Burkina Faso    2012  Urban          22.88
+436                            Burundi    2012  Urban          22.60
+478                           Cambodia    2012  Urban          88.24
+508                           Cameroon    2012  Urban          14.58
+523           Central African Republic    2012  Urban          22.09
+559                               Chad    2012  Urban          17.67
+592                            Comoros    2012  Urban          17.87
+622                              Congo    2012  Urban          56.11
+637                         Costa Rica    2012  Urban          84.12
+670                      Côte d’Ivoire    2012  Urban          28.36
+706                               Cuba    2012  Urban          87.92
+730   Democratic Republic of the Congo    2012  Urban           7.35
+772                 Dominican Republic    2012  Urban          58.44
+796                            Ecuador    2012  Urban          83.62
+820                              Egypt    2012  Urban          91.11
+874                        El Salvador    2012  Urban          92.41
+892                  Equatorial Guinea    2012  Urban          26.45
+925                           Eswatini    2012  Urban          47.78
+967                           Ethiopia    2012  Urban          23.35
+985                             Gambia    2012  Urban          12.28
+                               ...     ...    ...            ...
+1795                             Nepal    2012  Urban          77.53
+1861                           Nigeria    2012  Urban          52.85
+1887                          Pakistan    2012  Urban          83.25
+1914                          Paraguay    2012  Urban          84.47
+1941                       Philippines    2012  Urban          85.14
+1959               Republic of Moldova    2012  Urban          93.36
+1989                            Rwanda    2012  Urban          11.61
+2040                       Saint Lucia    2012  Urban          87.83
+2070             Sao Tome and Principe    2012  Urban          39.01
+2100                            Serbia    2012  Urban          97.85
+2136                      Sierra Leone    2012  Urban          21.58
+2178                   Solomon Islands    2012  Urban          58.93
+2199                           Somalia    2012  Urban          12.00
+2220                      South Africa    2012  Urban          52.56
+2238                             Sudan    2012  Urban          32.19
+2253                          Suriname    2012  Urban          74.26
+2301                        Tajikistan    2012  Urban          88.22
+2337                          Thailand    2012  Urban          84.70
+2355                       Timor-Leste    2012  Urban          42.62
+2373                              Togo    2012  Urban          20.12
+2409               Trinidad and Tobago    2012  Urban          89.37
+2442                           Tunisia    2012  Urban          95.83
+2478                      Turkmenistan    2012  Urban          95.44
+2532                            Uganda    2012  Urban          26.78
+2586       United Republic of Tanzania    2012  Urban          63.08
+2604                           Vanuatu    2012  Urban          48.23
+2631                          Viet Nam    2012  Urban          92.54
+2670                             Yemen    2012  Urban          70.86
+2697                            Zambia    2012  Urban          25.59
+2721                          Zimbabwe    2012  Urban          48.54
+
+[83 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2012 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+17                         Afghanistan    2012  Rural          29.02
+56                             Algeria    2012  Rural          73.07
+83                              Angola    2012  Rural          13.23
+101                            Armenia    2012  Rural          82.60
+164                         Bangladesh    2012  Rural          25.71
+212                             Belize    2012  Rural          81.51
+251                              Benin    2012  Rural           4.35
+296                             Bhutan    2012  Rural          75.22
+332   Bolivia (Plurinational State of)    2012  Rural          19.26
+353             Bosnia and Herzegovina    2012  Rural          95.95
+383                       Burkina Faso    2012  Rural           5.82
+437                            Burundi    2012  Rural           4.04
+479                           Cambodia    2012  Rural          59.66
+509                           Cameroon    2012  Rural           2.87
+524           Central African Republic    2012  Rural          12.95
+560                               Chad    2012  Rural           2.31
+593                            Comoros    2012  Rural          14.65
+623                              Congo    2012  Rural          31.81
+638                         Costa Rica    2012  Rural          82.91
+671                      Côte d’Ivoire    2012  Rural          10.23
+707                               Cuba    2012  Rural          76.10
+731   Democratic Republic of the Congo    2012  Rural           2.22
+773                 Dominican Republic    2012  Rural          41.90
+797                            Ecuador    2012  Rural          75.40
+821                              Egypt    2012  Rural          78.48
+875                        El Salvador    2012  Rural          86.27
+893                  Equatorial Guinea    2012  Rural          20.29
+926                           Eswatini    2012  Rural          16.77
+968                           Ethiopia    2012  Rural           4.04
+986                             Gambia    2012  Rural           1.10
+                               ...     ...    ...            ...
+1862                           Nigeria    2012  Rural          31.26
+1888                          Pakistan    2012  Rural          46.05
+1915                          Paraguay    2012  Rural          71.89
+1921                              Peru    2012  Rural          55.51
+1942                       Philippines    2012  Rural          72.62
+1960               Republic of Moldova    2012  Rural          82.26
+1990                            Rwanda    2012  Rural           2.03
+2041                       Saint Lucia    2012  Rural          87.06
+2071             Sao Tome and Principe    2012  Rural          47.31
+2101                            Serbia    2012  Rural          97.55
+2137                      Sierra Leone    2012  Rural          10.44
+2179                   Solomon Islands    2012  Rural          28.90
+2200                           Somalia    2012  Rural           8.10
+2221                      South Africa    2012  Rural          27.48
+2239                             Sudan    2012  Rural          18.85
+2254                          Suriname    2012  Rural          55.14
+2302                        Tajikistan    2012  Rural          66.76
+2338                          Thailand    2012  Rural          83.17
+2356                       Timor-Leste    2012  Rural          21.93
+2374                              Togo    2012  Rural           3.73
+2410               Trinidad and Tobago    2012  Rural          89.55
+2443                           Tunisia    2012  Rural          67.06
+2479                      Turkmenistan    2012  Rural          89.46
+2533                            Uganda    2012  Rural          12.65
+2587       United Republic of Tanzania    2012  Rural          40.48
+2605                           Vanuatu    2012  Rural          17.47
+2632                          Viet Nam    2012  Rural          82.21
+2671                             Yemen    2012  Rural          37.54
+2698                            Zambia    2012  Rural           5.16
+2722                          Zimbabwe    2012  Rural          31.20
+
+[84 rows x 4 columns]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83]
