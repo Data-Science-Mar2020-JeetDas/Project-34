@@ -1,0 +1,141 @@
+#******************* Question - : 2003 :  ********************
+
+
+df2003 = df[df.Period == 2003]
+print("\n\n--------------[ OUTPUT for 2003 ]----------------------\n\n")
+print(df2003[['Location','Period','Dim1','First Tooltip']])
+
+df2003_total = df2003[df2003.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2003 Total ]----------------------\n\n")
+print(df2003_total[['Location','Period','Dim1','First Tooltip']])
+
+df2003_urban = df2003[df2003.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2003 Urban ]----------------------\n\n")
+print(df2003_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2003_rural = df2003[df2003.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2003 Rural ]----------------------\n\n")
+print(df2003_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2003_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2003_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2003_rural['Location']))
+print(i2)
+
+#--------------- plot for 2003 ----------------------
+
+plt.title('Question - : 2003')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2003_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2003_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2003_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2003 ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+126        Armenia    2003  Total          85.04
+127        Armenia    2003  Urban          93.55
+128        Armenia    2003  Rural          69.83
+276          Benin    2003  Total           2.43
+277          Benin    2003  Urban           5.31
+278          Benin    2003  Rural           0.54
+408   Burkina Faso    2003  Total           6.87
+409   Burkina Faso    2003  Urban          23.24
+410   Burkina Faso    2003  Rural           2.78
+846          Egypt    2003  Total          70.55
+847          Egypt    2003  Urban          87.44
+848          Egypt    2003  Rural          57.84
+1506    Madagascar    2003  Total           8.13
+1507    Madagascar    2003  Urban          25.08
+1508    Madagascar    2003  Rural           1.55
+1560        Malawi    2003  Total          15.29
+1561        Malawi    2003  Urban          31.77
+1562        Malawi    2003  Rural          12.41
+1839         Niger    2003  Total           8.99
+1840         Niger    2003  Urban          29.51
+1841         Niger    2003  Rural           5.00
+2015        Rwanda    2003  Total           1.95
+2016        Rwanda    2003  Urban           8.36
+2017        Rwanda    2003  Rural           0.64
+2504  Turkmenistan    2003  Total          76.23
+2505  Turkmenistan    2003  Urban          85.89
+2506  Turkmenistan    2003  Rural          67.81
+2558        Uganda    2003  Total           5.75
+2559        Uganda    2003  Urban          13.31
+2560        Uganda    2003  Rural           4.30
+
+
+--------------[ OUTPUT for 2003 Total ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+126        Armenia    2003  Total          85.04
+276          Benin    2003  Total           2.43
+408   Burkina Faso    2003  Total           6.87
+846          Egypt    2003  Total          70.55
+1506    Madagascar    2003  Total           8.13
+1560        Malawi    2003  Total          15.29
+1839         Niger    2003  Total           8.99
+2015        Rwanda    2003  Total           1.95
+2504  Turkmenistan    2003  Total          76.23
+2558        Uganda    2003  Total           5.75
+
+
+--------------[ OUTPUT for 2003 Urban ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+127        Armenia    2003  Urban          93.55
+277          Benin    2003  Urban           5.31
+409   Burkina Faso    2003  Urban          23.24
+847          Egypt    2003  Urban          87.44
+1507    Madagascar    2003  Urban          25.08
+1561        Malawi    2003  Urban          31.77
+1840         Niger    2003  Urban          29.51
+2016        Rwanda    2003  Urban           8.36
+2505  Turkmenistan    2003  Urban          85.89
+2559        Uganda    2003  Urban          13.31
+
+
+--------------[ OUTPUT for 2003 Rural ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+128        Armenia    2003  Rural          69.83
+278          Benin    2003  Rural           0.54
+410   Burkina Faso    2003  Rural           2.78
+848          Egypt    2003  Rural          57.84
+1508    Madagascar    2003  Rural           1.55
+1562        Malawi    2003  Rural          12.41
+1841         Niger    2003  Rural           5.00
+2017        Rwanda    2003  Rural           0.64
+2506  Turkmenistan    2003  Rural          67.81
+2560        Uganda    2003  Rural           4.30
+[0 1 2 3 4 5 6 7 8 9]
+[0 1 2 3 4 5 6 7 8 9]
+[0 1 2 3 4 5 6 7 8 9]
