@@ -1,0 +1,253 @@
+
+#******************* Question - : 2006 :  ********************
+
+
+df2006 = df[df.Period == 2006]
+print("\n\n--------------[ OUTPUT for 2006 ]----------------------\n\n")
+print(df2006[['Location','Period','Dim1','First Tooltip']])
+
+df2006_total = df2006[df2006.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2006 Total ]----------------------\n\n")
+print(df2006_total[['Location','Period','Dim1','First Tooltip']])
+
+df2006_urban = df2006[df2006.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2006 Urban ]----------------------\n\n")
+print(df2006_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2006_rural = df2006[df2006.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2006 Rural ]----------------------\n\n")
+print(df2006_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2006_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2006_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2006_rural['Location']))
+print(i2)
+
+#--------------- plot for 2006 ----------------------
+
+plt.title('Question - : 2006')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2006_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2006_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2006_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2006 ]----------------------
+
+
+                      Location  Period   Dim1  First Tooltip
+33                 Afghanistan    2006  Total          36.94
+34                 Afghanistan    2006  Urban          63.58
+35                 Afghanistan    2006  Rural          29.02
+117                    Armenia    2006  Total          86.93
+118                    Armenia    2006  Urban          94.20
+119                    Armenia    2006  Rural          74.09
+180                 Bangladesh    2006  Total          32.69
+181                 Bangladesh    2006  Urban          51.09
+182                 Bangladesh    2006  Rural          25.71
+228                     Belize    2006  Total          77.88
+229                     Belize    2006  Urban          79.41
+230                     Belize    2006  Rural          76.61
+267                      Benin    2006  Total           4.33
+268                      Benin    2006  Urban           7.95
+269                      Benin    2006  Rural           1.81
+312                     Bhutan    2006  Total          79.06
+313                     Bhutan    2006  Urban          87.32
+314                     Bhutan    2006  Rural          75.22
+399               Burkina Faso    2006  Total           8.11
+400               Burkina Faso    2006  Urban          23.12
+401               Burkina Faso    2006  Rural           3.79
+453                    Burundi    2006  Total           5.97
+454                    Burundi    2006  Urban          24.44
+455                    Burundi    2006  Rural           4.01
+540   Central African Republic    2006  Total          16.44
+541   Central African Republic    2006  Urban          22.09
+542   Central African Republic    2006  Rural          12.95
+687              Côte d’Ivoire    2006  Total          18.50
+688              Côte d’Ivoire    2006  Urban          28.36
+689              Côte d’Ivoire    2006  Rural          10.23
+                       ...     ...    ...            ...
+2006                    Rwanda    2006  Total           2.52
+2007                    Rwanda    2006  Urban           9.44
+2008                    Rwanda    2006  Rural           1.11
+2117                    Serbia    2006  Total          97.71
+2118                    Serbia    2006  Urban          97.85
+2119                    Serbia    2006  Rural          97.55
+2153              Sierra Leone    2006  Total          11.32
+2154              Sierra Leone    2006  Urban          17.18
+2155              Sierra Leone    2006  Rural           7.83
+2270                  Suriname    2006  Total          67.88
+2271                  Suriname    2006  Urban          74.26
+2272                  Suriname    2006  Rural          55.14
+2318                Tajikistan    2006  Total          72.39
+2319                Tajikistan    2006  Urban          88.64
+2320                Tajikistan    2006  Rural          66.52
+2390                      Togo    2006  Total           9.57
+2391                      Togo    2006  Urban          20.12
+2392                      Togo    2006  Rural           3.73
+2459                   Tunisia    2006  Total          89.25
+2460                   Tunisia    2006  Urban          98.16
+2461                   Tunisia    2006  Rural          72.32
+2495              Turkmenistan    2006  Total          81.67
+2496              Turkmenistan    2006  Urban          89.07
+2497              Turkmenistan    2006  Rural          75.02
+2549                    Uganda    2006  Total           8.95
+2550                    Uganda    2006  Urban          17.80
+2551                    Uganda    2006  Rural           7.08
+2648                  Viet Nam    2006  Total          85.09
+2649                  Viet Nam    2006  Urban          92.54
+2650                  Viet Nam    2006  Rural          82.21
+
+[105 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2006 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+33                         Afghanistan    2006  Total          36.94
+117                            Armenia    2006  Total          86.93
+180                         Bangladesh    2006  Total          32.69
+228                             Belize    2006  Total          77.88
+267                              Benin    2006  Total           4.33
+312                             Bhutan    2006  Total          79.06
+399                       Burkina Faso    2006  Total           8.11
+453                            Burundi    2006  Total           5.97
+540           Central African Republic    2006  Total          16.44
+687                      Côte d’Ivoire    2006  Total          18.50
+747   Democratic Republic of the Congo    2006  Total           4.17
+837                              Egypt    2006  Total          75.03
+942                           Eswatini    2006  Total          23.57
+1002                            Gambia    2006  Total           7.00
+1080                            Guinea    2006  Total          17.00
+1116                     Guinea-Bissau    2006  Total           6.22
+1182                             Haiti    2006  Total          24.18
+1263                         Indonesia    2006  Total          62.91
+1299                              Iraq    2006  Total          89.71
+1401                        Kyrgyzstan    2006  Total          89.16
+1497                        Madagascar    2006  Total          23.62
+1551                            Malawi    2006  Total          13.89
+1698                          Mongolia    2006  Total          69.60
+1812                             Nepal    2006  Total          55.35
+1830                             Niger    2006  Total           8.98
+2006                            Rwanda    2006  Total           2.52
+2117                            Serbia    2006  Total          97.71
+2153                      Sierra Leone    2006  Total          11.32
+2270                          Suriname    2006  Total          67.88
+2318                        Tajikistan    2006  Total          72.39
+2390                              Togo    2006  Total           9.57
+2459                           Tunisia    2006  Total          89.25
+2495                      Turkmenistan    2006  Total          81.67
+2549                            Uganda    2006  Total           8.95
+2648                          Viet Nam    2006  Total          85.09
+
+
+--------------[ OUTPUT for 2006 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+34                         Afghanistan    2006  Urban          63.58
+118                            Armenia    2006  Urban          94.20
+181                         Bangladesh    2006  Urban          51.09
+229                             Belize    2006  Urban          79.41
+268                              Benin    2006  Urban           7.95
+313                             Bhutan    2006  Urban          87.32
+400                       Burkina Faso    2006  Urban          23.12
+454                            Burundi    2006  Urban          24.44
+541           Central African Republic    2006  Urban          22.09
+688                      Côte d’Ivoire    2006  Urban          28.36
+748   Democratic Republic of the Congo    2006  Urban           7.35
+838                              Egypt    2006  Urban          88.66
+943                           Eswatini    2006  Urban          47.78
+1003                            Gambia    2006  Urban          12.28
+1081                            Guinea    2006  Urban          26.29
+1117                     Guinea-Bissau    2006  Urban           8.77
+1183                             Haiti    2006  Urban          32.35
+1264                         Indonesia    2006  Urban          71.60
+1300                              Iraq    2006  Urban          95.07
+1402                        Kyrgyzstan    2006  Urban          93.49
+1498                        Madagascar    2006  Urban          41.73
+1552                            Malawi    2006  Urban          28.24
+1699                          Mongolia    2006  Urban          81.50
+1813                             Nepal    2006  Urban          83.56
+1831                             Niger    2006  Urban          29.51
+2007                            Rwanda    2006  Urban           9.44
+2118                            Serbia    2006  Urban          97.85
+2154                      Sierra Leone    2006  Urban          17.18
+2271                          Suriname    2006  Urban          74.26
+2319                        Tajikistan    2006  Urban          88.64
+2391                              Togo    2006  Urban          20.12
+2460                           Tunisia    2006  Urban          98.16
+2496                      Turkmenistan    2006  Urban          89.07
+2550                            Uganda    2006  Urban          17.80
+2649                          Viet Nam    2006  Urban          92.54
+
+
+--------------[ OUTPUT for 2006 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+35                         Afghanistan    2006  Rural          29.02
+119                            Armenia    2006  Rural          74.09
+182                         Bangladesh    2006  Rural          25.71
+230                             Belize    2006  Rural          76.61
+269                              Benin    2006  Rural           1.81
+314                             Bhutan    2006  Rural          75.22
+401                       Burkina Faso    2006  Rural           3.79
+455                            Burundi    2006  Rural           4.01
+542           Central African Republic    2006  Rural          12.95
+689                      Côte d’Ivoire    2006  Rural          10.23
+749   Democratic Republic of the Congo    2006  Rural           2.22
+839                              Egypt    2006  Rural          64.72
+944                           Eswatini    2006  Rural          16.77
+1004                            Gambia    2006  Rural           1.10
+1082                            Guinea    2006  Rural          12.52
+1118                     Guinea-Bissau    2006  Rural           4.62
+1184                             Haiti    2006  Rural          17.87
+1265                         Indonesia    2006  Rural          55.29
+1301                              Iraq    2006  Rural          77.88
+1403                        Kyrgyzstan    2006  Rural          86.80
+1499                        Madagascar    2006  Rural          16.06
+1553                            Malawi    2006  Rural          11.33
+1700                          Mongolia    2006  Rural          48.88
+1814                             Nepal    2006  Rural          50.19
+1832                             Niger    2006  Rural           5.00
+2008                            Rwanda    2006  Rural           1.11
+2119                            Serbia    2006  Rural          97.55
+2155                      Sierra Leone    2006  Rural           7.83
+2272                          Suriname    2006  Rural          55.14
+2320                        Tajikistan    2006  Rural          66.52
+2392                              Togo    2006  Rural           3.73
+2461                           Tunisia    2006  Rural          72.32
+2497                      Turkmenistan    2006  Rural          75.02
+2551                            Uganda    2006  Rural           7.08
+2650                          Viet Nam    2006  Rural          82.21
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34]
