@@ -1,0 +1,343 @@
+#******************* Question - : 2013 :  ********************
+
+
+df2013 = df[df.Period == 2013]
+print("\n\n--------------[ OUTPUT for 2013 ]----------------------\n\n")
+print(df2013[['Location','Period','Dim1','First Tooltip']])
+
+df2013_total = df2013[df2013.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2013 Total ]----------------------\n\n")
+print(df2013_total[['Location','Period','Dim1','First Tooltip']])
+
+df2013_urban = df2013[df2013.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2013 Urban ]----------------------\n\n")
+print(df2013_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2013_rural = df2013[df2013.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2013 Rural ]----------------------\n\n")
+print(df2013_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2013_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2013_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2013_rural['Location']))
+print(i2)
+
+#--------------- plot for 2013 ----------------------
+
+plt.title('Question - : 2013')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2013_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2013_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2013_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2013 ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+12                         Afghanistan    2013  Total          37.44
+13                         Afghanistan    2013  Urban          63.58
+14                         Afghanistan    2013  Rural          29.02
+51                             Algeria    2013  Total          83.37
+52                             Algeria    2013  Urban          87.88
+53                             Algeria    2013  Rural          73.07
+78                              Angola    2013  Total          26.08
+79                              Angola    2013  Urban          33.95
+80                              Angola    2013  Rural          13.23
+96                             Armenia    2013  Total          91.41
+97                             Armenia    2013  Urban          95.72
+98                             Armenia    2013  Rural          84.01
+142                         Azerbaijan    2013  Total          83.24
+159                         Bangladesh    2013  Total          34.02
+160                         Bangladesh    2013  Urban          51.09
+161                         Bangladesh    2013  Rural          25.71
+189                           Barbados    2013  Total          88.47
+207                             Belize    2013  Total          83.98
+208                             Belize    2013  Urban          84.98
+209                             Belize    2013  Rural          83.15
+246                              Benin    2013  Total           8.93
+247                              Benin    2013  Urban          14.09
+248                              Benin    2013  Rural           4.77
+291                             Bhutan    2013  Total          79.71
+292                             Bhutan    2013  Urban          87.32
+293                             Bhutan    2013  Rural          75.22
+327   Bolivia (Plurinational State of)    2013  Total          25.26
+328   Bolivia (Plurinational State of)    2013  Urban          28.12
+329   Bolivia (Plurinational State of)    2013  Rural          19.26
+348             Bosnia and Herzegovina    2013  Total          97.14
+                               ...     ...    ...            ...
+2405               Trinidad and Tobago    2013  Total          89.44
+2406               Trinidad and Tobago    2013  Urban          89.37
+2407               Trinidad and Tobago    2013  Rural          89.55
+2438                           Tunisia    2013  Total          84.84
+2439                           Tunisia    2013  Urban          94.66
+2440                           Tunisia    2013  Rural          64.43
+2474                      Turkmenistan    2013  Total          94.16
+2475                      Turkmenistan    2013  Urban          96.50
+2476                      Turkmenistan    2013  Rural          91.86
+2528                            Uganda    2013  Total          16.66
+2529                            Uganda    2013  Urban          28.28
+2530                            Uganda    2013  Rural          13.57
+2582       United Republic of Tanzania    2013  Total          47.31
+2583       United Republic of Tanzania    2013  Urban          63.08
+2584       United Republic of Tanzania    2013  Rural          40.48
+2600                           Vanuatu    2013  Total          25.09
+2601                           Vanuatu    2013  Urban          48.23
+2602                           Vanuatu    2013  Rural          17.47
+2627                          Viet Nam    2013  Total          85.56
+2628                          Viet Nam    2013  Urban          92.54
+2629                          Viet Nam    2013  Rural          82.21
+2666                             Yemen    2013  Total          48.72
+2667                             Yemen    2013  Urban          70.86
+2668                             Yemen    2013  Rural          37.54
+2693                            Zambia    2013  Total          13.51
+2694                            Zambia    2013  Urban          25.59
+2695                            Zambia    2013  Rural           5.16
+2717                          Zimbabwe    2013  Total          36.86
+2718                          Zimbabwe    2013  Urban          48.54
+2719                          Zimbabwe    2013  Rural          31.20
+
+[274 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2013 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+12                         Afghanistan    2013  Total          37.44
+51                             Algeria    2013  Total          83.37
+78                              Angola    2013  Total          26.08
+96                             Armenia    2013  Total          91.41
+142                         Azerbaijan    2013  Total          83.24
+159                         Bangladesh    2013  Total          34.02
+189                           Barbados    2013  Total          88.47
+207                             Belize    2013  Total          83.98
+246                              Benin    2013  Total           8.93
+291                             Bhutan    2013  Total          79.71
+327   Bolivia (Plurinational State of)    2013  Total          25.26
+348             Bosnia and Herzegovina    2013  Total          97.14
+378                       Burkina Faso    2013  Total          10.56
+432                            Burundi    2013  Total           6.13
+474                           Cambodia    2013  Total          65.78
+504                           Cameroon    2013  Total           9.12
+519           Central African Republic    2013  Total          16.58
+555                               Chad    2013  Total           5.72
+576                           Colombia    2013  Total          64.86
+588                            Comoros    2013  Total          15.56
+618                              Congo    2013  Total          47.52
+633                         Costa Rica    2013  Total          83.82
+666                      Côte d’Ivoire    2013  Total          19.04
+702                               Cuba    2013  Total          85.18
+726   Democratic Republic of the Congo    2013  Total           4.36
+768                 Dominican Republic    2013  Total          54.60
+792                            Ecuador    2013  Total          80.59
+816                              Egypt    2013  Total          85.38
+870                        El Salvador    2013  Total          90.45
+888                  Equatorial Guinea    2013  Total          24.57
+                               ...     ...    ...            ...
+1870                              Oman    2013  Total          97.40
+1883                          Pakistan    2013  Total          59.30
+1910                          Paraguay    2013  Total          79.46
+1937                       Philippines    2013  Total          78.37
+1955               Republic of Moldova    2013  Total          86.98
+1985                            Rwanda    2013  Total           3.84
+2036                       Saint Lucia    2013  Total          87.20
+2066             Sao Tome and Principe    2013  Total          41.65
+2090                           Senegal    2013  Total          23.57
+2096                            Serbia    2013  Total          97.72
+2132                      Sierra Leone    2013  Total          15.73
+2174                   Solomon Islands    2013  Total          35.33
+2195                           Somalia    2013  Total           9.74
+2216                      South Africa    2013  Total          43.48
+2234                             Sudan    2013  Total          23.32
+2249                          Suriname    2013  Total          67.79
+2297                        Tajikistan    2013  Total          72.50
+2333                          Thailand    2013  Total          83.88
+2351                       Timor-Leste    2013  Total          27.88
+2369                              Togo    2013  Total          10.13
+2405               Trinidad and Tobago    2013  Total          89.44
+2438                           Tunisia    2013  Total          84.84
+2474                      Turkmenistan    2013  Total          94.16
+2528                            Uganda    2013  Total          16.66
+2582       United Republic of Tanzania    2013  Total          47.31
+2600                           Vanuatu    2013  Total          25.09
+2627                          Viet Nam    2013  Total          85.56
+2666                             Yemen    2013  Total          48.72
+2693                            Zambia    2013  Total          13.51
+2717                          Zimbabwe    2013  Total          36.86
+
+[93 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2013 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+13                         Afghanistan    2013  Urban          63.58
+52                             Algeria    2013  Urban          87.88
+79                              Angola    2013  Urban          33.95
+97                             Armenia    2013  Urban          95.72
+160                         Bangladesh    2013  Urban          51.09
+208                             Belize    2013  Urban          84.98
+247                              Benin    2013  Urban          14.09
+292                             Bhutan    2013  Urban          87.32
+328   Bolivia (Plurinational State of)    2013  Urban          28.12
+349             Bosnia and Herzegovina    2013  Urban          98.50
+379                       Burkina Faso    2013  Urban          22.85
+433                            Burundi    2013  Urban          22.15
+475                           Cambodia    2013  Urban          88.24
+505                           Cameroon    2013  Urban          14.58
+520           Central African Republic    2013  Urban          22.09
+556                               Chad    2013  Urban          17.67
+577                           Colombia    2013  Urban          72.81
+589                            Comoros    2013  Urban          17.87
+619                              Congo    2013  Urban          56.11
+634                         Costa Rica    2013  Urban          84.12
+667                      Côte d’Ivoire    2013  Urban          28.36
+703                               Cuba    2013  Urban          87.92
+727   Democratic Republic of the Congo    2013  Urban           7.35
+769                 Dominican Republic    2013  Urban          58.44
+793                            Ecuador    2013  Urban          83.62
+817                              Egypt    2013  Urban          91.52
+871                        El Salvador    2013  Urban          92.41
+889                  Equatorial Guinea    2013  Urban          26.45
+922                           Eswatini    2013  Urban          47.78
+964                           Ethiopia    2013  Urban          23.35
+                               ...     ...    ...            ...
+1858                           Nigeria    2013  Urban          52.85
+1884                          Pakistan    2013  Urban          83.25
+1911                          Paraguay    2013  Urban          84.47
+1938                       Philippines    2013  Urban          85.14
+1956               Republic of Moldova    2013  Urban          93.36
+1986                            Rwanda    2013  Urban          11.97
+2037                       Saint Lucia    2013  Urban          87.83
+2067             Sao Tome and Principe    2013  Urban          39.01
+2091                           Senegal    2013  Urban          41.83
+2097                            Serbia    2013  Urban          97.85
+2133                      Sierra Leone    2013  Urban          22.68
+2175                   Solomon Islands    2013  Urban          58.93
+2196                           Somalia    2013  Urban          12.00
+2217                      South Africa    2013  Urban          52.56
+2235                             Sudan    2013  Urban          32.19
+2250                          Suriname    2013  Urban          74.26
+2298                        Tajikistan    2013  Urban          88.01
+2334                          Thailand    2013  Urban          84.70
+2352                       Timor-Leste    2013  Urban          42.62
+2370                              Togo    2013  Urban          20.12
+2406               Trinidad and Tobago    2013  Urban          89.37
+2439                           Tunisia    2013  Urban          94.66
+2475                      Turkmenistan    2013  Urban          96.50
+2529                            Uganda    2013  Urban          28.28
+2583       United Republic of Tanzania    2013  Urban          63.08
+2601                           Vanuatu    2013  Urban          48.23
+2628                          Viet Nam    2013  Urban          92.54
+2667                             Yemen    2013  Urban          70.86
+2694                            Zambia    2013  Urban          25.59
+2718                          Zimbabwe    2013  Urban          48.54
+
+[90 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2013 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+14                         Afghanistan    2013  Rural          29.02
+53                             Algeria    2013  Rural          73.07
+80                              Angola    2013  Rural          13.23
+98                             Armenia    2013  Rural          84.01
+161                         Bangladesh    2013  Rural          25.71
+209                             Belize    2013  Rural          83.15
+248                              Benin    2013  Rural           4.77
+293                             Bhutan    2013  Rural          75.22
+329   Bolivia (Plurinational State of)    2013  Rural          19.26
+350             Bosnia and Herzegovina    2013  Rural          95.95
+380                       Burkina Faso    2013  Rural           6.16
+434                            Burundi    2013  Rural           4.05
+476                           Cambodia    2013  Rural          59.66
+506                           Cameroon    2013  Rural           2.87
+521           Central African Republic    2013  Rural          12.95
+557                               Chad    2013  Rural           2.31
+578                           Colombia    2013  Rural          34.84
+590                            Comoros    2013  Rural          14.65
+620                              Congo    2013  Rural          31.81
+635                         Costa Rica    2013  Rural          82.91
+668                      Côte d’Ivoire    2013  Rural          10.23
+704                               Cuba    2013  Rural          76.10
+728   Democratic Republic of the Congo    2013  Rural           2.22
+770                 Dominican Republic    2013  Rural          41.90
+794                            Ecuador    2013  Rural          75.40
+818                              Egypt    2013  Rural          80.78
+872                        El Salvador    2013  Rural          86.27
+890                  Equatorial Guinea    2013  Rural          20.29
+923                           Eswatini    2013  Rural          16.77
+965                           Ethiopia    2013  Rural           4.04
+                               ...     ...    ...            ...
+1885                          Pakistan    2013  Rural          46.05
+1912                          Paraguay    2013  Rural          71.89
+1920                              Peru    2013  Rural          55.51
+1939                       Philippines    2013  Rural          72.62
+1957               Republic of Moldova    2013  Rural          82.26
+1987                            Rwanda    2013  Rural           2.18
+2038                       Saint Lucia    2013  Rural          87.06
+2068             Sao Tome and Principe    2013  Rural          47.31
+2092                           Senegal    2013  Rural           8.63
+2098                            Serbia    2013  Rural          97.55
+2134                      Sierra Leone    2013  Rural          11.09
+2176                   Solomon Islands    2013  Rural          28.90
+2197                           Somalia    2013  Rural           8.10
+2218                      South Africa    2013  Rural          27.48
+2236                             Sudan    2013  Rural          18.85
+2251                          Suriname    2013  Rural          55.14
+2299                        Tajikistan    2013  Rural          66.88
+2335                          Thailand    2013  Rural          83.17
+2353                       Timor-Leste    2013  Rural          21.93
+2371                              Togo    2013  Rural           3.73
+2407               Trinidad and Tobago    2013  Rural          89.55
+2440                           Tunisia    2013  Rural          64.43
+2476                      Turkmenistan    2013  Rural          91.86
+2530                            Uganda    2013  Rural          13.57
+2584       United Republic of Tanzania    2013  Rural          40.48
+2602                           Vanuatu    2013  Rural          17.47
+2629                          Viet Nam    2013  Rural          82.21
+2668                             Yemen    2013  Rural          37.54
+2695                            Zambia    2013  Rural           5.16
+2719                          Zimbabwe    2013  Rural          31.20
+
+[91 rows x 4 columns]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90]
