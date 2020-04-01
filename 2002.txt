@@ -1,0 +1,142 @@
+#******************* Question - : 2002 :  ********************
+
+
+df2002 = df[df.Period == 2002]
+print("\n\n--------------[ OUTPUT for 2002 ]----------------------\n\n")
+print(df2002[['Location','Period','Dim1','First Tooltip']])
+
+df2002_total = df2002[df2002.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2002 Total ]----------------------\n\n")
+print(df2002_total[['Location','Period','Dim1','First Tooltip']])
+
+df2002_urban = df2002[df2002.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2002 Urban ]----------------------\n\n")
+print(df2002_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2002_rural = df2002[df2002.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2002 Rural ]----------------------\n\n")
+print(df2002_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2002_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2002_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2002_rural['Location']))
+print(i2)
+
+#--------------- plot for 2002 ----------------------
+
+plt.title('Question - : 2002')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2002_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2002_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2002_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2002 ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+129        Armenia    2002  Total          84.42
+130        Armenia    2002  Urban          93.33
+131        Armenia    2002  Rural          68.41
+279          Benin    2002  Total           1.81
+280          Benin    2002  Urban           4.44
+281          Benin    2002  Rural           0.12
+411   Burkina Faso    2002  Total           6.45
+412   Burkina Faso    2002  Urban          23.28
+413   Burkina Faso    2002  Rural           2.44
+849          Egypt    2002  Total          69.05
+850          Egypt    2002  Urban          87.03
+851          Egypt    2002  Rural          55.54
+1509    Madagascar    2002  Total           5.40
+1510    Madagascar    2002  Urban          19.53
+1511    Madagascar    2002  Rural           0.00
+1563        Malawi    2002  Total          15.75
+1564        Malawi    2002  Urban          32.95
+1565        Malawi    2002  Rural          12.77
+1842         Niger    2002  Total           8.99
+1843         Niger    2002  Urban          29.51
+1844         Niger    2002  Rural           5.00
+2018        Rwanda    2002  Total           1.75
+2019        Rwanda    2002  Urban           7.99
+2020        Rwanda    2002  Rural           0.49
+2507  Turkmenistan    2002  Total          74.41
+2508  Turkmenistan    2002  Urban          84.83
+2509  Turkmenistan    2002  Rural          65.40
+2561        Uganda    2002  Total           4.69
+2562        Uganda    2002  Urban          11.82
+2563        Uganda    2002  Rural           3.37
+
+
+--------------[ OUTPUT for 2002 Total ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+129        Armenia    2002  Total          84.42
+279          Benin    2002  Total           1.81
+411   Burkina Faso    2002  Total           6.45
+849          Egypt    2002  Total          69.05
+1509    Madagascar    2002  Total           5.40
+1563        Malawi    2002  Total          15.75
+1842         Niger    2002  Total           8.99
+2018        Rwanda    2002  Total           1.75
+2507  Turkmenistan    2002  Total          74.41
+2561        Uganda    2002  Total           4.69
+
+
+--------------[ OUTPUT for 2002 Urban ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+130        Armenia    2002  Urban          93.33
+280          Benin    2002  Urban           4.44
+412   Burkina Faso    2002  Urban          23.28
+850          Egypt    2002  Urban          87.03
+1510    Madagascar    2002  Urban          19.53
+1564        Malawi    2002  Urban          32.95
+1843         Niger    2002  Urban          29.51
+2019        Rwanda    2002  Urban           7.99
+2508  Turkmenistan    2002  Urban          84.83
+2562        Uganda    2002  Urban          11.82
+
+
+--------------[ OUTPUT for 2002 Rural ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+131        Armenia    2002  Rural          68.41
+281          Benin    2002  Rural           0.12
+413   Burkina Faso    2002  Rural           2.44
+851          Egypt    2002  Rural          55.54
+1511    Madagascar    2002  Rural           0.00
+1565        Malawi    2002  Rural          12.77
+1844         Niger    2002  Rural           5.00
+2020        Rwanda    2002  Rural           0.49
+2509  Turkmenistan    2002  Rural          65.40
+2563        Uganda    2002  Rural           3.37
+[0 1 2 3 4 5 6 7 8 9]
+[0 1 2 3 4 5 6 7 8 9]
+[0 1 2 3 4 5 6 7 8 9]
