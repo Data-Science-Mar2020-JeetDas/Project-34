@@ -1,0 +1,287 @@
+
+#******************* Question - : 2008 :  ********************
+
+
+df2008 = df[df.Period == 2008]
+print("\n\n--------------[ OUTPUT for 2008 ]----------------------\n\n")
+print(df2008[['Location','Period','Dim1','First Tooltip']])
+
+df2008_total = df2008[df2008.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2008 Total ]----------------------\n\n")
+print(df2008_total[['Location','Period','Dim1','First Tooltip']])
+
+df2008_urban = df2008[df2008.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2008 Urban ]----------------------\n\n")
+print(df2008_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2008_rural = df2008[df2008.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2008 Rural ]----------------------\n\n")
+print(df2008_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2008_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2008_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2008_rural['Location']))
+print(i2)
+
+#--------------- plot for 2008 ----------------------
+
+plt.title('Question - : 2008')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2008_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2008_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2008_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+--------------[ OUTPUT for 2008 ]----------------------
+
+
+                    Location  Period   Dim1  First Tooltip
+27               Afghanistan    2008  Total          37.08
+28               Afghanistan    2008  Urban          63.58
+29               Afghanistan    2008  Rural          29.02
+111                  Armenia    2008  Total          88.20
+112                  Armenia    2008  Urban          94.64
+113                  Armenia    2008  Rural          76.92
+174               Bangladesh    2008  Total          33.06
+175               Bangladesh    2008  Urban          51.09
+176               Bangladesh    2008  Rural          25.71
+194                 Barbados    2008  Total          88.47
+222                   Belize    2008  Total          77.87
+223                   Belize    2008  Urban          79.41
+224                   Belize    2008  Rural          76.61
+261                    Benin    2008  Total           5.62
+262                    Benin    2008  Urban           9.70
+263                    Benin    2008  Rural           2.66
+306                   Bhutan    2008  Total          79.24
+307                   Bhutan    2008  Urban          87.32
+308                   Bhutan    2008  Rural          75.22
+363   Bosnia and Herzegovina    2008  Total          97.10
+364   Bosnia and Herzegovina    2008  Urban          98.50
+365   Bosnia and Herzegovina    2008  Rural          95.95
+393             Burkina Faso    2008  Total           8.84
+394             Burkina Faso    2008  Urban          23.04
+395             Burkina Faso    2008  Rural           4.47
+447                  Burundi    2008  Total           6.07
+448                  Burundi    2008  Urban          24.44
+449                  Burundi    2008  Rural           4.01
+489                 Cambodia    2008  Total          65.25
+490                 Cambodia    2008  Urban          88.24
+                     ...     ...    ...            ...
+2111                  Serbia    2008  Total          97.72
+2112                  Serbia    2008  Urban          97.85
+2113                  Serbia    2008  Rural          97.55
+2147            Sierra Leone    2008  Total          11.39
+2148            Sierra Leone    2008  Urban          17.18
+2149            Sierra Leone    2008  Rural           7.83
+2264                Suriname    2008  Total          67.85
+2265                Suriname    2008  Urban          74.26
+2266                Suriname    2008  Rural          55.14
+2312              Tajikistan    2008  Total          72.39
+2313              Tajikistan    2008  Urban          88.64
+2314              Tajikistan    2008  Rural          66.52
+2384                    Togo    2008  Total           9.73
+2385                    Togo    2008  Urban          20.12
+2386                    Togo    2008  Rural           3.73
+2420     Trinidad and Tobago    2008  Total          89.44
+2421     Trinidad and Tobago    2008  Urban          89.37
+2422     Trinidad and Tobago    2008  Rural          89.55
+2453                 Tunisia    2008  Total          89.40
+2454                 Tunisia    2008  Urban          98.16
+2455                 Tunisia    2008  Rural          72.32
+2489            Turkmenistan    2008  Total          85.27
+2490            Turkmenistan    2008  Urban          91.20
+2491            Turkmenistan    2008  Rural          79.83
+2543                  Uganda    2008  Total          11.12
+2544                  Uganda    2008  Urban          20.80
+2545                  Uganda    2008  Rural           8.94
+2642                Viet Nam    2008  Total          85.22
+2643                Viet Nam    2008  Urban          92.54
+2644                Viet Nam    2008  Rural          82.21
+
+[139 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2008 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+27                         Afghanistan    2008  Total          37.08
+111                            Armenia    2008  Total          88.20
+174                         Bangladesh    2008  Total          33.06
+194                           Barbados    2008  Total          88.47
+222                             Belize    2008  Total          77.87
+261                              Benin    2008  Total           5.62
+306                             Bhutan    2008  Total          79.24
+363             Bosnia and Herzegovina    2008  Total          97.10
+393                       Burkina Faso    2008  Total           8.84
+447                            Burundi    2008  Total           6.07
+489                           Cambodia    2008  Total          65.25
+534           Central African Republic    2008  Total          16.47
+603                            Comoros    2008  Total          15.55
+648                         Costa Rica    2008  Total          83.75
+681                      Côte d’Ivoire    2008  Total          18.66
+741   Democratic Republic of the Congo    2008  Total           4.22
+831                              Egypt    2008  Total          77.99
+903                  Equatorial Guinea    2008  Total          24.16
+936                           Eswatini    2008  Total          23.61
+996                             Gambia    2008  Total           7.16
+1074                            Guinea    2008  Total          17.08
+1110                     Guinea-Bissau    2008  Total           6.25
+1176                             Haiti    2008  Total          24.47
+1209                          Honduras    2008  Total          83.81
+1257                         Indonesia    2008  Total          63.17
+1293                              Iraq    2008  Total          89.73
+1326                           Jamaica    2008  Total          66.34
+1395                        Kyrgyzstan    2008  Total          89.16
+1491                        Madagascar    2008  Total          34.05
+1545                            Malawi    2008  Total          12.96
+1692                          Mongolia    2008  Total          70.27
+1728                        Mozambique    2008  Total          11.75
+1806                             Nepal    2008  Total          55.56
+1824                             Niger    2008  Total           8.98
+1970               Republic of Moldova    2008  Total          87.00
+2000                            Rwanda    2008  Total           2.89
+2051                       Saint Lucia    2008  Total          87.21
+2111                            Serbia    2008  Total          97.72
+2147                      Sierra Leone    2008  Total          11.39
+2264                          Suriname    2008  Total          67.85
+2312                        Tajikistan    2008  Total          72.39
+2384                              Togo    2008  Total           9.73
+2420               Trinidad and Tobago    2008  Total          89.44
+2453                           Tunisia    2008  Total          89.40
+2489                      Turkmenistan    2008  Total          85.27
+2543                            Uganda    2008  Total          11.12
+2642                          Viet Nam    2008  Total          85.22
+
+
+--------------[ OUTPUT for 2008 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+28                         Afghanistan    2008  Urban          63.58
+112                            Armenia    2008  Urban          94.64
+175                         Bangladesh    2008  Urban          51.09
+223                             Belize    2008  Urban          79.41
+262                              Benin    2008  Urban           9.70
+307                             Bhutan    2008  Urban          87.32
+364             Bosnia and Herzegovina    2008  Urban          98.50
+394                       Burkina Faso    2008  Urban          23.04
+448                            Burundi    2008  Urban          24.44
+490                           Cambodia    2008  Urban          88.24
+535           Central African Republic    2008  Urban          22.09
+604                            Comoros    2008  Urban          17.87
+649                         Costa Rica    2008  Urban          84.12
+682                      Côte d’Ivoire    2008  Urban          28.36
+742   Democratic Republic of the Congo    2008  Urban           7.35
+832                              Egypt    2008  Urban          89.48
+904                  Equatorial Guinea    2008  Urban          26.45
+937                           Eswatini    2008  Urban          47.78
+997                             Gambia    2008  Urban          12.28
+1075                            Guinea    2008  Urban          26.29
+1111                     Guinea-Bissau    2008  Urban           8.77
+1177                             Haiti    2008  Urban          32.35
+1210                          Honduras    2008  Urban          87.21
+1258                         Indonesia    2008  Urban          71.60
+1294                              Iraq    2008  Urban          95.07
+1327                           Jamaica    2008  Urban          69.19
+1396                        Kyrgyzstan    2008  Urban          93.49
+1492                        Madagascar    2008  Urban          52.84
+1546                            Malawi    2008  Urban          25.89
+1693                          Mongolia    2008  Urban          81.50
+1729                        Mozambique    2008  Urban          21.07
+1807                             Nepal    2008  Urban          83.56
+1825                             Niger    2008  Urban          29.51
+1971               Republic of Moldova    2008  Urban          93.36
+2001                            Rwanda    2008  Urban          10.17
+2052                       Saint Lucia    2008  Urban          87.83
+2112                            Serbia    2008  Urban          97.85
+2148                      Sierra Leone    2008  Urban          17.18
+2265                          Suriname    2008  Urban          74.26
+2313                        Tajikistan    2008  Urban          88.64
+2385                              Togo    2008  Urban          20.12
+2421               Trinidad and Tobago    2008  Urban          89.37
+2454                           Tunisia    2008  Urban          98.16
+2490                      Turkmenistan    2008  Urban          91.20
+2544                            Uganda    2008  Urban          20.80
+2643                          Viet Nam    2008  Urban          92.54
+
+
+--------------[ OUTPUT for 2008 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+29                         Afghanistan    2008  Rural          29.02
+113                            Armenia    2008  Rural          76.92
+176                         Bangladesh    2008  Rural          25.71
+224                             Belize    2008  Rural          76.61
+263                              Benin    2008  Rural           2.66
+308                             Bhutan    2008  Rural          75.22
+365             Bosnia and Herzegovina    2008  Rural          95.95
+395                       Burkina Faso    2008  Rural           4.47
+449                            Burundi    2008  Rural           4.01
+491                           Cambodia    2008  Rural          59.66
+536           Central African Republic    2008  Rural          12.95
+605                            Comoros    2008  Rural          14.65
+650                         Costa Rica    2008  Rural          82.91
+683                      Côte d’Ivoire    2008  Rural          10.23
+743   Democratic Republic of the Congo    2008  Rural           2.22
+833                              Egypt    2008  Rural          69.31
+905                  Equatorial Guinea    2008  Rural          20.29
+938                           Eswatini    2008  Rural          16.77
+998                             Gambia    2008  Rural           1.10
+1076                            Guinea    2008  Rural          12.52
+1112                     Guinea-Bissau    2008  Rural           4.62
+1178                             Haiti    2008  Rural          17.87
+1211                          Honduras    2008  Rural          80.33
+1259                         Indonesia    2008  Rural          55.29
+1295                              Iraq    2008  Rural          77.88
+1328                           Jamaica    2008  Rural          63.07
+1397                        Kyrgyzstan    2008  Rural          86.80
+1493                        Madagascar    2008  Rural          25.74
+1547                            Malawi    2008  Rural          10.61
+1694                          Mongolia    2008  Rural          48.88
+1730                        Mozambique    2008  Rural           7.59
+1808                             Nepal    2008  Rural          50.19
+1826                             Niger    2008  Rural           5.00
+1972               Republic of Moldova    2008  Rural          82.26
+2002                            Rwanda    2008  Rural           1.41
+2053                       Saint Lucia    2008  Rural          87.06
+2113                            Serbia    2008  Rural          97.55
+2149                      Sierra Leone    2008  Rural           7.83
+2266                          Suriname    2008  Rural          55.14
+2314                        Tajikistan    2008  Rural          66.52
+2386                              Togo    2008  Rural           3.73
+2422               Trinidad and Tobago    2008  Rural          89.55
+2455                           Tunisia    2008  Rural          72.32
+2491                      Turkmenistan    2008  Rural          79.83
+2545                            Uganda    2008  Rural           8.94
+2644                          Viet Nam    2008  Rural          82.21
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45]
