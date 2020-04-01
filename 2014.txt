@@ -1,0 +1,344 @@
+
+#******************* Question - : 2014 :  ********************
+
+
+df2014 = df[df.Period == 2014]
+print("\n\n--------------[ OUTPUT for 2014 ]----------------------\n\n")
+print(df2014[['Location','Period','Dim1','First Tooltip']])
+
+df2014_total = df2014[df2014.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2014 Total ]----------------------\n\n")
+print(df2014_total[['Location','Period','Dim1','First Tooltip']])
+
+df2014_urban = df2014[df2014.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2014 Urban ]----------------------\n\n")
+print(df2014_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2014_rural = df2014[df2014.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2014 Rural ]----------------------\n\n")
+print(df2014_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2014_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2014_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2014_rural['Location']))
+print(i2)
+
+#--------------- plot for 2014 ----------------------
+
+plt.title('Question - : 2014')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2014_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2014_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2014_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2014 ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+9                          Afghanistan    2014  Total          37.52
+10                         Afghanistan    2014  Urban          63.58
+11                         Afghanistan    2014  Rural          29.02
+48                             Algeria    2014  Total          83.47
+49                             Algeria    2014  Urban          87.88
+50                             Algeria    2014  Rural          73.07
+75                              Angola    2014  Total          26.23
+76                              Angola    2014  Urban          33.95
+77                              Angola    2014  Rural          13.23
+93                             Armenia    2014  Total          92.06
+94                             Armenia    2014  Urban          95.94
+95                             Armenia    2014  Rural          85.43
+141                         Azerbaijan    2014  Total          83.24
+156                         Bangladesh    2014  Total          34.22
+157                         Bangladesh    2014  Urban          51.09
+158                         Bangladesh    2014  Rural          25.71
+188                           Barbados    2014  Total          88.47
+204                             Belize    2014  Total          85.50
+205                             Belize    2014  Urban          86.37
+206                             Belize    2014  Rural          84.78
+243                              Benin    2014  Total           9.61
+244                              Benin    2014  Urban          14.96
+245                              Benin    2014  Rural           5.20
+288                             Bhutan    2014  Total          79.81
+289                             Bhutan    2014  Urban          87.32
+290                             Bhutan    2014  Rural          75.22
+324   Bolivia (Plurinational State of)    2014  Total          25.29
+325   Bolivia (Plurinational State of)    2014  Urban          28.12
+326   Bolivia (Plurinational State of)    2014  Rural          19.26
+345             Bosnia and Herzegovina    2014  Total          97.15
+                               ...     ...    ...            ...
+2402               Trinidad and Tobago    2014  Total          89.44
+2403               Trinidad and Tobago    2014  Urban          89.37
+2404               Trinidad and Tobago    2014  Rural          89.55
+2435                           Tunisia    2014  Total          83.28
+2436                           Tunisia    2014  Urban          93.50
+2437                           Tunisia    2014  Rural          61.81
+2471                      Turkmenistan    2014  Total          95.91
+2472                      Turkmenistan    2014  Urban          97.56
+2473                      Turkmenistan    2014  Rural          94.27
+2525                            Uganda    2014  Total          17.79
+2526                            Uganda    2014  Urban          29.78
+2527                            Uganda    2014  Rural          14.50
+2579       United Republic of Tanzania    2014  Total          47.47
+2580       United Republic of Tanzania    2014  Urban          63.08
+2581       United Republic of Tanzania    2014  Rural          40.48
+2597                           Vanuatu    2014  Total          25.12
+2598                           Vanuatu    2014  Urban          48.23
+2599                           Vanuatu    2014  Rural          17.47
+2624                          Viet Nam    2014  Total          85.63
+2625                          Viet Nam    2014  Urban          92.54
+2626                          Viet Nam    2014  Rural          82.21
+2663                             Yemen    2014  Total          48.93
+2664                             Yemen    2014  Urban          70.86
+2665                             Yemen    2014  Rural          37.54
+2690                            Zambia    2014  Total          13.61
+2691                            Zambia    2014  Urban          25.59
+2692                            Zambia    2014  Rural           5.16
+2714                          Zimbabwe    2014  Total          36.84
+2715                          Zimbabwe    2014  Urban          48.54
+2716                          Zimbabwe    2014  Rural          31.20
+
+[277 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2014 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+9                          Afghanistan    2014  Total          37.52
+48                             Algeria    2014  Total          83.47
+75                              Angola    2014  Total          26.23
+93                             Armenia    2014  Total          92.06
+141                         Azerbaijan    2014  Total          83.24
+156                         Bangladesh    2014  Total          34.22
+188                           Barbados    2014  Total          88.47
+204                             Belize    2014  Total          85.50
+243                              Benin    2014  Total           9.61
+288                             Bhutan    2014  Total          79.81
+324   Bolivia (Plurinational State of)    2014  Total          25.29
+345             Bosnia and Herzegovina    2014  Total          97.15
+375                       Burkina Faso    2014  Total          10.89
+429                            Burundi    2014  Total           6.13
+471                           Cambodia    2014  Total          65.89
+501                           Cameroon    2014  Total           9.19
+516           Central African Republic    2014  Total          16.60
+552                               Chad    2014  Total           5.74
+573                           Colombia    2014  Total          64.99
+585                            Comoros    2014  Total          15.56
+615                              Congo    2014  Total          47.63
+630                         Costa Rica    2014  Total          83.83
+663                      Côte d’Ivoire    2014  Total          19.11
+699                               Cuba    2014  Total          85.18
+723   Democratic Republic of the Congo    2014  Total           4.38
+765                 Dominican Republic    2014  Total          54.75
+789                            Ecuador    2014  Total          80.60
+813                              Egypt    2014  Total          86.86
+867                        El Salvador    2014  Total          90.50
+885                  Equatorial Guinea    2014  Total          24.61
+                               ...     ...    ...            ...
+1880                          Pakistan    2014  Total          59.38
+1907                          Paraguay    2014  Total          79.50
+1934                       Philippines    2014  Total          78.39
+1952               Republic of Moldova    2014  Total          86.98
+1982                            Rwanda    2014  Total           4.03
+2033                       Saint Lucia    2014  Total          87.20
+2063             Sao Tome and Principe    2014  Total          41.57
+2087                           Senegal    2014  Total          23.71
+2093                            Serbia    2014  Total          97.72
+2129                      Sierra Leone    2014  Total          16.61
+2171                   Solomon Islands    2014  Total          35.47
+2192                           Somalia    2014  Total           9.76
+2213                      South Africa    2014  Total          43.61
+2231                             Sudan    2014  Total          23.35
+2246                          Suriname    2014  Total          67.78
+2282              Syrian Arab Republic    2014  Total          70.54
+2294                        Tajikistan    2014  Total          72.54
+2330                          Thailand    2014  Total          83.89
+2348                       Timor-Leste    2014  Total          27.95
+2366                              Togo    2014  Total          10.22
+2402               Trinidad and Tobago    2014  Total          89.44
+2435                           Tunisia    2014  Total          83.28
+2471                      Turkmenistan    2014  Total          95.91
+2525                            Uganda    2014  Total          17.79
+2579       United Republic of Tanzania    2014  Total          47.47
+2597                           Vanuatu    2014  Total          25.12
+2624                          Viet Nam    2014  Total          85.63
+2663                             Yemen    2014  Total          48.93
+2690                            Zambia    2014  Total          13.61
+2714                          Zimbabwe    2014  Total          36.84
+
+[94 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2014 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+10                         Afghanistan    2014  Urban          63.58
+49                             Algeria    2014  Urban          87.88
+76                              Angola    2014  Urban          33.95
+94                             Armenia    2014  Urban          95.94
+157                         Bangladesh    2014  Urban          51.09
+205                             Belize    2014  Urban          86.37
+244                              Benin    2014  Urban          14.96
+289                             Bhutan    2014  Urban          87.32
+325   Bolivia (Plurinational State of)    2014  Urban          28.12
+346             Bosnia and Herzegovina    2014  Urban          98.50
+376                       Burkina Faso    2014  Urban          22.81
+430                            Burundi    2014  Urban          21.69
+472                           Cambodia    2014  Urban          88.24
+502                           Cameroon    2014  Urban          14.58
+517           Central African Republic    2014  Urban          22.09
+553                               Chad    2014  Urban          17.67
+574                           Colombia    2014  Urban          72.81
+586                            Comoros    2014  Urban          17.87
+616                              Congo    2014  Urban          56.11
+631                         Costa Rica    2014  Urban          84.12
+664                      Côte d’Ivoire    2014  Urban          28.36
+700                               Cuba    2014  Urban          87.92
+724   Democratic Republic of the Congo    2014  Urban           7.35
+766                 Dominican Republic    2014  Urban          58.44
+790                            Ecuador    2014  Urban          83.62
+814                              Egypt    2014  Urban          91.92
+868                        El Salvador    2014  Urban          92.41
+886                  Equatorial Guinea    2014  Urban          26.45
+919                           Eswatini    2014  Urban          47.78
+961                           Ethiopia    2014  Urban          23.35
+                               ...     ...    ...            ...
+1881                          Pakistan    2014  Urban          83.25
+1908                          Paraguay    2014  Urban          84.47
+1935                       Philippines    2014  Urban          85.14
+1953               Republic of Moldova    2014  Urban          93.36
+1983                            Rwanda    2014  Urban          12.34
+2034                       Saint Lucia    2014  Urban          87.83
+2064             Sao Tome and Principe    2014  Urban          39.01
+2088                           Senegal    2014  Urban          41.83
+2094                            Serbia    2014  Urban          97.85
+2130                      Sierra Leone    2014  Urban          23.78
+2172                   Solomon Islands    2014  Urban          58.93
+2193                           Somalia    2014  Urban          12.00
+2214                      South Africa    2014  Urban          52.56
+2232                             Sudan    2014  Urban          32.19
+2247                          Suriname    2014  Urban          74.26
+2283              Syrian Arab Republic    2014  Urban          71.97
+2295                        Tajikistan    2014  Urban          87.80
+2331                          Thailand    2014  Urban          84.70
+2349                       Timor-Leste    2014  Urban          42.62
+2367                              Togo    2014  Urban          20.12
+2403               Trinidad and Tobago    2014  Urban          89.37
+2436                           Tunisia    2014  Urban          93.50
+2472                      Turkmenistan    2014  Urban          97.56
+2526                            Uganda    2014  Urban          29.78
+2580       United Republic of Tanzania    2014  Urban          63.08
+2598                           Vanuatu    2014  Urban          48.23
+2625                          Viet Nam    2014  Urban          92.54
+2664                             Yemen    2014  Urban          70.86
+2691                            Zambia    2014  Urban          25.59
+2715                          Zimbabwe    2014  Urban          48.54
+
+[91 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2014 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+11                         Afghanistan    2014  Rural          29.02
+50                             Algeria    2014  Rural          73.07
+77                              Angola    2014  Rural          13.23
+95                             Armenia    2014  Rural          85.43
+158                         Bangladesh    2014  Rural          25.71
+206                             Belize    2014  Rural          84.78
+245                              Benin    2014  Rural           5.20
+290                             Bhutan    2014  Rural          75.22
+326   Bolivia (Plurinational State of)    2014  Rural          19.26
+347             Bosnia and Herzegovina    2014  Rural          95.95
+377                       Burkina Faso    2014  Rural           6.50
+431                            Burundi    2014  Rural           4.06
+473                           Cambodia    2014  Rural          59.66
+503                           Cameroon    2014  Rural           2.87
+518           Central African Republic    2014  Rural          12.95
+554                               Chad    2014  Rural           2.31
+575                           Colombia    2014  Rural          34.84
+587                            Comoros    2014  Rural          14.65
+617                              Congo    2014  Rural          31.81
+632                         Costa Rica    2014  Rural          82.91
+665                      Côte d’Ivoire    2014  Rural          10.23
+701                               Cuba    2014  Rural          76.10
+725   Democratic Republic of the Congo    2014  Rural           2.22
+767                 Dominican Republic    2014  Rural          41.90
+791                            Ecuador    2014  Rural          75.40
+815                              Egypt    2014  Rural          83.07
+869                        El Salvador    2014  Rural          86.27
+887                  Equatorial Guinea    2014  Rural          20.29
+920                           Eswatini    2014  Rural          16.77
+962                           Ethiopia    2014  Rural           4.04
+                               ...     ...    ...            ...
+1909                          Paraguay    2014  Rural          71.89
+1919                              Peru    2014  Rural          55.51
+1936                       Philippines    2014  Rural          72.62
+1954               Republic of Moldova    2014  Rural          82.26
+1984                            Rwanda    2014  Rural           2.34
+2035                       Saint Lucia    2014  Rural          87.06
+2065             Sao Tome and Principe    2014  Rural          47.31
+2089                           Senegal    2014  Rural           8.63
+2095                            Serbia    2014  Rural          97.55
+2131                      Sierra Leone    2014  Rural          11.75
+2173                   Solomon Islands    2014  Rural          28.90
+2194                           Somalia    2014  Rural           8.10
+2215                      South Africa    2014  Rural          27.48
+2233                             Sudan    2014  Rural          18.85
+2248                          Suriname    2014  Rural          55.14
+2284              Syrian Arab Republic    2014  Rural          69.03
+2296                        Tajikistan    2014  Rural          67.00
+2332                          Thailand    2014  Rural          83.17
+2350                       Timor-Leste    2014  Rural          21.93
+2368                              Togo    2014  Rural           3.73
+2404               Trinidad and Tobago    2014  Rural          89.55
+2437                           Tunisia    2014  Rural          61.81
+2473                      Turkmenistan    2014  Rural          94.27
+2527                            Uganda    2014  Rural          14.50
+2581       United Republic of Tanzania    2014  Rural          40.48
+2599                           Vanuatu    2014  Rural          17.47
+2626                          Viet Nam    2014  Rural          82.21
+2665                             Yemen    2014  Rural          37.54
+2692                            Zambia    2014  Rural           5.16
+2716                          Zimbabwe    2014  Rural          31.20
+
+[92 rows x 4 columns]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+ 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+ 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91]
