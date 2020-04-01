@@ -1,0 +1,191 @@
+
+#******************* Question - : 2004 :  ********************
+
+
+df2004 = df[df.Period == 2004]
+print("\n\n--------------[ OUTPUT for 2004 ]----------------------\n\n")
+print(df2004[['Location','Period','Dim1','First Tooltip']])
+
+df2004_total = df2004[df2004.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2004 Total ]----------------------\n\n")
+print(df2004_total[['Location','Period','Dim1','First Tooltip']])
+
+df2004_urban = df2004[df2004.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2004 Urban ]----------------------\n\n")
+print(df2004_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2004_rural = df2004[df2004.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2004 Rural ]----------------------\n\n")
+print(df2004_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2004_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2004_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2004_rural['Location']))
+print(i2)
+
+#--------------- plot for 2004 ----------------------
+
+plt.title('Question - : 2004')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2004_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2004_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2004_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2004 ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+123                            Armenia    2004  Total          85.67
+124                            Armenia    2004  Urban          93.77
+125                            Armenia    2004  Rural          71.25
+273                              Benin    2004  Total           3.06
+274                              Benin    2004  Urban           6.19
+275                              Benin    2004  Rural           0.97
+405                       Burkina Faso    2004  Total           7.28
+406                       Burkina Faso    2004  Urban          23.20
+407                       Burkina Faso    2004  Rural           3.11
+459                            Burundi    2004  Total           5.87
+460                            Burundi    2004  Urban          24.44
+461                            Burundi    2004  Rural           4.01
+753   Democratic Republic of the Congo    2004  Total           4.12
+754   Democratic Republic of the Congo    2004  Urban           7.35
+755   Democratic Republic of the Congo    2004  Rural           2.22
+843                              Egypt    2004  Total          72.04
+844                              Egypt    2004  Urban          87.85
+845                              Egypt    2004  Rural          60.13
+948                           Eswatini    2004  Total          23.64
+949                           Eswatini    2004  Urban          47.78
+950                           Eswatini    2004  Rural          16.77
+1008                            Gambia    2004  Total           6.84
+1009                            Gambia    2004  Urban          12.28
+1010                            Gambia    2004  Rural           1.10
+1122                     Guinea-Bissau    2004  Total           6.19
+1123                     Guinea-Bissau    2004  Urban           8.77
+1124                     Guinea-Bissau    2004  Rural           4.62
+1503                        Madagascar    2004  Total          13.23
+1504                        Madagascar    2004  Urban          30.63
+1505                        Madagascar    2004  Rural           6.39
+1557                            Malawi    2004  Total          14.83
+1558                            Malawi    2004  Urban          30.59
+1559                            Malawi    2004  Rural          12.05
+1704                          Mongolia    2004  Total          68.92
+1705                          Mongolia    2004  Urban          81.50
+1706                          Mongolia    2004  Rural          48.88
+1836                             Niger    2004  Total           8.98
+1837                             Niger    2004  Urban          29.51
+1838                             Niger    2004  Rural           5.00
+2012                            Rwanda    2004  Total           2.14
+2013                            Rwanda    2004  Urban           8.72
+2014                            Rwanda    2004  Rural           0.80
+2159                      Sierra Leone    2004  Total          11.25
+2160                      Sierra Leone    2004  Urban          17.18
+2161                      Sierra Leone    2004  Rural           7.83
+2396                              Togo    2004  Total           9.42
+2397                              Togo    2004  Urban          20.12
+2398                              Togo    2004  Rural           3.73
+2501                      Turkmenistan    2004  Total          78.05
+2502                      Turkmenistan    2004  Urban          86.95
+2503                      Turkmenistan    2004  Rural          70.21
+2555                            Uganda    2004  Total           6.81
+2556                            Uganda    2004  Urban          14.81
+2557                            Uganda    2004  Rural           5.23
+
+
+--------------[ OUTPUT for 2004 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+123                            Armenia    2004  Total          85.67
+273                              Benin    2004  Total           3.06
+405                       Burkina Faso    2004  Total           7.28
+459                            Burundi    2004  Total           5.87
+753   Democratic Republic of the Congo    2004  Total           4.12
+843                              Egypt    2004  Total          72.04
+948                           Eswatini    2004  Total          23.64
+1008                            Gambia    2004  Total           6.84
+1122                     Guinea-Bissau    2004  Total           6.19
+1503                        Madagascar    2004  Total          13.23
+1557                            Malawi    2004  Total          14.83
+1704                          Mongolia    2004  Total          68.92
+1836                             Niger    2004  Total           8.98
+2012                            Rwanda    2004  Total           2.14
+2159                      Sierra Leone    2004  Total          11.25
+2396                              Togo    2004  Total           9.42
+2501                      Turkmenistan    2004  Total          78.05
+2555                            Uganda    2004  Total           6.81
+
+
+--------------[ OUTPUT for 2004 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+124                            Armenia    2004  Urban          93.77
+274                              Benin    2004  Urban           6.19
+406                       Burkina Faso    2004  Urban          23.20
+460                            Burundi    2004  Urban          24.44
+754   Democratic Republic of the Congo    2004  Urban           7.35
+844                              Egypt    2004  Urban          87.85
+949                           Eswatini    2004  Urban          47.78
+1009                            Gambia    2004  Urban          12.28
+1123                     Guinea-Bissau    2004  Urban           8.77
+1504                        Madagascar    2004  Urban          30.63
+1558                            Malawi    2004  Urban          30.59
+1705                          Mongolia    2004  Urban          81.50
+1837                             Niger    2004  Urban          29.51
+2013                            Rwanda    2004  Urban           8.72
+2160                      Sierra Leone    2004  Urban          17.18
+2397                              Togo    2004  Urban          20.12
+2502                      Turkmenistan    2004  Urban          86.95
+2556                            Uganda    2004  Urban          14.81
+
+
+--------------[ OUTPUT for 2004 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+125                            Armenia    2004  Rural          71.25
+275                              Benin    2004  Rural           0.97
+407                       Burkina Faso    2004  Rural           3.11
+461                            Burundi    2004  Rural           4.01
+755   Democratic Republic of the Congo    2004  Rural           2.22
+845                              Egypt    2004  Rural          60.13
+950                           Eswatini    2004  Rural          16.77
+1010                            Gambia    2004  Rural           1.10
+1124                     Guinea-Bissau    2004  Rural           4.62
+1505                        Madagascar    2004  Rural           6.39
+1559                            Malawi    2004  Rural          12.05
+1706                          Mongolia    2004  Rural          48.88
+1838                             Niger    2004  Rural           5.00
+2014                            Rwanda    2004  Rural           0.80
+2161                      Sierra Leone    2004  Rural           7.83
+2398                              Togo    2004  Rural           3.73
+2503                      Turkmenistan    2004  Rural          70.21
+2557                            Uganda    2004  Rural           5.23
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17]
