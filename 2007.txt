@@ -1,0 +1,268 @@
+#******************* Question - : 2007 :  ********************
+
+
+df2007 = df[df.Period == 2007]
+print("\n\n--------------[ OUTPUT for 2007 ]----------------------\n\n")
+print(df2007[['Location','Period','Dim1','First Tooltip']])
+
+df2007_total = df2007[df2007.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2007 Total ]----------------------\n\n")
+print(df2007_total[['Location','Period','Dim1','First Tooltip']])
+
+df2007_urban = df2007[df2007.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2007 Urban ]----------------------\n\n")
+print(df2007_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2007_rural = df2007[df2007.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2007 Rural ]----------------------\n\n")
+print(df2007_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2007_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2007_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2007_rural['Location']))
+print(i2)
+
+#--------------- plot for 2007 ----------------------
+
+plt.title('Question - : 2007')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2007_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2007_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2007_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2007 ]----------------------
+
+
+                      Location  Period   Dim1  First Tooltip
+30                 Afghanistan    2007  Total          37.01
+31                 Afghanistan    2007  Urban          63.58
+32                 Afghanistan    2007  Rural          29.02
+114                    Armenia    2007  Total          87.56
+115                    Armenia    2007  Urban          94.42
+116                    Armenia    2007  Rural          75.51
+177                 Bangladesh    2007  Total          32.87
+178                 Bangladesh    2007  Urban          51.09
+179                 Bangladesh    2007  Rural          25.71
+225                     Belize    2007  Total          77.87
+226                     Belize    2007  Urban          79.41
+227                     Belize    2007  Rural          76.61
+264                      Benin    2007  Total           4.97
+265                      Benin    2007  Urban           8.82
+266                      Benin    2007  Rural           2.24
+309                     Bhutan    2007  Total          79.15
+310                     Bhutan    2007  Urban          87.32
+311                     Bhutan    2007  Rural          75.22
+396               Burkina Faso    2007  Total           8.49
+397               Burkina Faso    2007  Urban          23.08
+398               Burkina Faso    2007  Rural           4.13
+450                    Burundi    2007  Total           6.02
+451                    Burundi    2007  Urban          24.44
+452                    Burundi    2007  Rural           4.01
+537   Central African Republic    2007  Total          16.46
+538   Central African Republic    2007  Urban          22.09
+539   Central African Republic    2007  Rural          12.95
+651                 Costa Rica    2007  Total          83.74
+652                 Costa Rica    2007  Urban          84.12
+653                 Costa Rica    2007  Rural          82.91
+                       ...     ...    ...            ...
+2114                    Serbia    2007  Total          97.72
+2115                    Serbia    2007  Urban          97.85
+2116                    Serbia    2007  Rural          97.55
+2150              Sierra Leone    2007  Total          11.35
+2151              Sierra Leone    2007  Urban          17.18
+2152              Sierra Leone    2007  Rural           7.83
+2267                  Suriname    2007  Total          67.87
+2268                  Suriname    2007  Urban          74.26
+2269                  Suriname    2007  Rural          55.14
+2315                Tajikistan    2007  Total          72.39
+2316                Tajikistan    2007  Urban          88.64
+2317                Tajikistan    2007  Rural          66.52
+2387                      Togo    2007  Total           9.65
+2388                      Togo    2007  Urban          20.12
+2389                      Togo    2007  Rural           3.73
+2423       Trinidad and Tobago    2007  Total          89.44
+2424       Trinidad and Tobago    2007  Urban          89.37
+2425       Trinidad and Tobago    2007  Rural          89.55
+2456                   Tunisia    2007  Total          89.32
+2457                   Tunisia    2007  Urban          98.16
+2458                   Tunisia    2007  Rural          72.32
+2492              Turkmenistan    2007  Total          83.47
+2493              Turkmenistan    2007  Urban          90.14
+2494              Turkmenistan    2007  Rural          77.43
+2546                    Uganda    2007  Total          10.03
+2547                    Uganda    2007  Urban          19.30
+2548                    Uganda    2007  Rural           8.01
+2645                  Viet Nam    2007  Total          85.15
+2646                  Viet Nam    2007  Urban          92.54
+2647                  Viet Nam    2007  Rural          82.21
+
+[120 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2007 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+30                         Afghanistan    2007  Total          37.01
+114                            Armenia    2007  Total          87.56
+177                         Bangladesh    2007  Total          32.87
+225                             Belize    2007  Total          77.87
+264                              Benin    2007  Total           4.97
+309                             Bhutan    2007  Total          79.15
+396                       Burkina Faso    2007  Total           8.49
+450                            Burundi    2007  Total           6.02
+537           Central African Republic    2007  Total          16.46
+651                         Costa Rica    2007  Total          83.74
+684                      Côte d’Ivoire    2007  Total          18.58
+744   Democratic Republic of the Congo    2007  Total           4.19
+834                              Egypt    2007  Total          76.51
+906                  Equatorial Guinea    2007  Total          24.05
+939                           Eswatini    2007  Total          23.54
+999                             Gambia    2007  Total           7.08
+1077                            Guinea    2007  Total          17.04
+1113                     Guinea-Bissau    2007  Total           6.24
+1179                             Haiti    2007  Total          24.32
+1260                         Indonesia    2007  Total          63.04
+1296                              Iraq    2007  Total          89.72
+1329                           Jamaica    2007  Total          66.32
+1398                        Kyrgyzstan    2007  Total          89.16
+1494                        Madagascar    2007  Total          28.83
+1548                            Malawi    2007  Total          13.43
+1695                          Mongolia    2007  Total          69.94
+1731                        Mozambique    2007  Total          11.68
+1809                             Nepal    2007  Total          55.45
+1827                             Niger    2007  Total           8.98
+2003                            Rwanda    2007  Total           2.71
+2114                            Serbia    2007  Total          97.72
+2150                      Sierra Leone    2007  Total          11.35
+2267                          Suriname    2007  Total          67.87
+2315                        Tajikistan    2007  Total          72.39
+2387                              Togo    2007  Total           9.65
+2423               Trinidad and Tobago    2007  Total          89.44
+2456                           Tunisia    2007  Total          89.32
+2492                      Turkmenistan    2007  Total          83.47
+2546                            Uganda    2007  Total          10.03
+2645                          Viet Nam    2007  Total          85.15
+
+
+--------------[ OUTPUT for 2007 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+31                         Afghanistan    2007  Urban          63.58
+115                            Armenia    2007  Urban          94.42
+178                         Bangladesh    2007  Urban          51.09
+226                             Belize    2007  Urban          79.41
+265                              Benin    2007  Urban           8.82
+310                             Bhutan    2007  Urban          87.32
+397                       Burkina Faso    2007  Urban          23.08
+451                            Burundi    2007  Urban          24.44
+538           Central African Republic    2007  Urban          22.09
+652                         Costa Rica    2007  Urban          84.12
+685                      Côte d’Ivoire    2007  Urban          28.36
+745   Democratic Republic of the Congo    2007  Urban           7.35
+835                              Egypt    2007  Urban          89.07
+907                  Equatorial Guinea    2007  Urban          26.45
+940                           Eswatini    2007  Urban          47.78
+1000                            Gambia    2007  Urban          12.28
+1078                            Guinea    2007  Urban          26.29
+1114                     Guinea-Bissau    2007  Urban           8.77
+1180                             Haiti    2007  Urban          32.35
+1261                         Indonesia    2007  Urban          71.60
+1297                              Iraq    2007  Urban          95.07
+1330                           Jamaica    2007  Urban          69.19
+1399                        Kyrgyzstan    2007  Urban          93.49
+1495                        Madagascar    2007  Urban          47.29
+1549                            Malawi    2007  Urban          27.06
+1696                          Mongolia    2007  Urban          81.50
+1732                        Mozambique    2007  Urban          21.07
+1810                             Nepal    2007  Urban          83.56
+1828                             Niger    2007  Urban          29.51
+2004                            Rwanda    2007  Urban           9.80
+2115                            Serbia    2007  Urban          97.85
+2151                      Sierra Leone    2007  Urban          17.18
+2268                          Suriname    2007  Urban          74.26
+2316                        Tajikistan    2007  Urban          88.64
+2388                              Togo    2007  Urban          20.12
+2424               Trinidad and Tobago    2007  Urban          89.37
+2457                           Tunisia    2007  Urban          98.16
+2493                      Turkmenistan    2007  Urban          90.14
+2547                            Uganda    2007  Urban          19.30
+2646                          Viet Nam    2007  Urban          92.54
+
+
+--------------[ OUTPUT for 2007 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+32                         Afghanistan    2007  Rural          29.02
+116                            Armenia    2007  Rural          75.51
+179                         Bangladesh    2007  Rural          25.71
+227                             Belize    2007  Rural          76.61
+266                              Benin    2007  Rural           2.24
+311                             Bhutan    2007  Rural          75.22
+398                       Burkina Faso    2007  Rural           4.13
+452                            Burundi    2007  Rural           4.01
+539           Central African Republic    2007  Rural          12.95
+653                         Costa Rica    2007  Rural          82.91
+686                      Côte d’Ivoire    2007  Rural          10.23
+746   Democratic Republic of the Congo    2007  Rural           2.22
+836                              Egypt    2007  Rural          67.01
+908                  Equatorial Guinea    2007  Rural          20.29
+941                           Eswatini    2007  Rural          16.77
+1001                            Gambia    2007  Rural           1.10
+1079                            Guinea    2007  Rural          12.52
+1115                     Guinea-Bissau    2007  Rural           4.62
+1181                             Haiti    2007  Rural          17.87
+1262                         Indonesia    2007  Rural          55.29
+1298                              Iraq    2007  Rural          77.88
+1331                           Jamaica    2007  Rural          63.07
+1400                        Kyrgyzstan    2007  Rural          86.80
+1496                        Madagascar    2007  Rural          20.90
+1550                            Malawi    2007  Rural          10.97
+1697                          Mongolia    2007  Rural          48.88
+1733                        Mozambique    2007  Rural           7.59
+1811                             Nepal    2007  Rural          50.19
+1829                             Niger    2007  Rural           5.00
+2005                            Rwanda    2007  Rural           1.26
+2116                            Serbia    2007  Rural          97.55
+2152                      Sierra Leone    2007  Rural           7.83
+2269                          Suriname    2007  Rural          55.14
+2317                        Tajikistan    2007  Rural          66.52
+2389                              Togo    2007  Rural           3.73
+2425               Trinidad and Tobago    2007  Rural          89.55
+2458                           Tunisia    2007  Rural          72.32
+2494                      Turkmenistan    2007  Rural          77.43
+2548                            Uganda    2007  Rural           8.01
+2647                          Viet Nam    2007  Rural          82.21
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]
