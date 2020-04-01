@@ -1,0 +1,137 @@
+
+#******************* Question - : 2000 :  ********************
+
+
+df2000 = df[df.Period == 2000]
+print("\n\n--------------[ OUTPUT for 2000 ]----------------------\n\n")
+print(df2000[['Location','Period','Dim1','First Tooltip']])
+
+df2000_total = df2000[df2000.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2000 Total ]----------------------\n\n")
+print(df2000_total[['Location','Period','Dim1','First Tooltip']])
+
+df2000_urban = df2000[df2000.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2000 Urban ]----------------------\n\n")
+print(df2000_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2000_rural = df2000[df2000.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2000 Rural ]----------------------\n\n")
+print(df2000_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2000_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2000_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2000_rural['Location']))
+print(i2)
+
+#--------------- plot for 2000 ----------------------
+
+plt.title('Question - : 2000')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2000_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2000_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2000_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2000 ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+135        Armenia    2000  Total          83.25
+136        Armenia    2000  Urban          92.90
+137        Armenia    2000  Rural          65.58
+285          Benin    2000  Total           1.03
+286          Benin    2000  Urban           2.68
+287          Benin    2000  Rural           0.00
+417   Burkina Faso    2000  Total           5.88
+418   Burkina Faso    2000  Urban          23.31
+419   Burkina Faso    2000  Rural           2.10
+855          Egypt    2000  Total          66.05
+856          Egypt    2000  Urban          86.22
+857          Egypt    2000  Rural          50.95
+1515    Madagascar    2000  Total           5.30
+1516    Madagascar    2000  Urban          19.53
+1517    Madagascar    2000  Rural           0.00
+1569        Malawi    2000  Total          16.68
+1570        Malawi    2000  Urban          35.30
+1571        Malawi    2000  Rural          13.49
+2024        Rwanda    2000  Total           1.24
+2025        Rwanda    2000  Urban           7.27
+2026        Rwanda    2000  Rural           0.18
+2513  Turkmenistan    2000  Total          70.75
+2514  Turkmenistan    2000  Urban          82.71
+2515  Turkmenistan    2000  Rural          60.59
+2567        Uganda    2000  Total           2.60
+2568        Uganda    2000  Urban           8.82
+2569        Uganda    2000  Rural           1.52
+
+
+--------------[ OUTPUT for 2000 Total ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+135        Armenia    2000  Total          83.25
+285          Benin    2000  Total           1.03
+417   Burkina Faso    2000  Total           5.88
+855          Egypt    2000  Total          66.05
+1515    Madagascar    2000  Total           5.30
+1569        Malawi    2000  Total          16.68
+2024        Rwanda    2000  Total           1.24
+2513  Turkmenistan    2000  Total          70.75
+2567        Uganda    2000  Total           2.60
+
+
+--------------[ OUTPUT for 2000 Urban ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+136        Armenia    2000  Urban          92.90
+286          Benin    2000  Urban           2.68
+418   Burkina Faso    2000  Urban          23.31
+856          Egypt    2000  Urban          86.22
+1516    Madagascar    2000  Urban          19.53
+1570        Malawi    2000  Urban          35.30
+2025        Rwanda    2000  Urban           7.27
+2514  Turkmenistan    2000  Urban          82.71
+2568        Uganda    2000  Urban           8.82
+
+
+--------------[ OUTPUT for 2000 Rural ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+137        Armenia    2000  Rural          65.58
+287          Benin    2000  Rural           0.00
+419   Burkina Faso    2000  Rural           2.10
+857          Egypt    2000  Rural          50.95
+1517    Madagascar    2000  Rural           0.00
+1571        Malawi    2000  Rural          13.49
+2026        Rwanda    2000  Rural           0.18
+2515  Turkmenistan    2000  Rural          60.59
+2569        Uganda    2000  Rural           1.52
+[0 1 2 3 4 5 6 7 8]
+[0 1 2 3 4 5 6 7 8]
+[0 1 2 3 4 5 6 7 8]
