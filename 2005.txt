@@ -1,0 +1,218 @@
+
+#******************* Question - : 2005 :  ********************
+
+
+df2005 = df[df.Period == 2005]
+print("\n\n--------------[ OUTPUT for 2005 ]----------------------\n\n")
+print(df2005[['Location','Period','Dim1','First Tooltip']])
+
+df2005_total = df2005[df2005.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2005 Total ]----------------------\n\n")
+print(df2005_total[['Location','Period','Dim1','First Tooltip']])
+
+df2005_urban = df2005[df2005.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2005 Urban ]----------------------\n\n")
+print(df2005_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2005_rural = df2005[df2005.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2005 Rural ]----------------------\n\n")
+print(df2005_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2005_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2005_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2005_rural['Location']))
+print(i2)
+
+#--------------- plot for 2005 ----------------------
+
+plt.title('Question - : 2005')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2005_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2005_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2005_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2005 ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+36                         Afghanistan    2005  Total          36.87
+37                         Afghanistan    2005  Urban          63.58
+38                         Afghanistan    2005  Rural          29.02
+120                            Armenia    2005  Total          86.30
+121                            Armenia    2005  Urban          93.99
+122                            Armenia    2005  Rural          72.67
+183                         Bangladesh    2005  Total          32.51
+184                         Bangladesh    2005  Urban          51.09
+185                         Bangladesh    2005  Rural          25.71
+231                             Belize    2005  Total          77.88
+232                             Belize    2005  Urban          79.41
+233                             Belize    2005  Rural          76.61
+270                              Benin    2005  Total           3.69
+271                              Benin    2005  Urban           7.07
+272                              Benin    2005  Rural           1.39
+402                       Burkina Faso    2005  Total           7.70
+403                       Burkina Faso    2005  Urban          23.16
+404                       Burkina Faso    2005  Rural           3.45
+456                            Burundi    2005  Total           5.92
+457                            Burundi    2005  Urban          24.44
+458                            Burundi    2005  Rural           4.01
+750   Democratic Republic of the Congo    2005  Total           4.14
+751   Democratic Republic of the Congo    2005  Urban           7.35
+752   Democratic Republic of the Congo    2005  Rural           2.22
+840                              Egypt    2005  Total          73.54
+841                              Egypt    2005  Urban          88.26
+842                              Egypt    2005  Rural          62.42
+945                           Eswatini    2005  Total          23.60
+946                           Eswatini    2005  Urban          47.78
+947                           Eswatini    2005  Rural          16.77
+                               ...     ...    ...            ...
+1554                            Malawi    2005  Total          14.36
+1555                            Malawi    2005  Urban          29.42
+1556                            Malawi    2005  Rural          11.69
+1701                          Mongolia    2005  Total          69.27
+1702                          Mongolia    2005  Urban          81.50
+1703                          Mongolia    2005  Rural          48.88
+1815                             Nepal    2005  Total          55.24
+1816                             Nepal    2005  Urban          83.56
+1817                             Nepal    2005  Rural          50.19
+1833                             Niger    2005  Total           8.98
+1834                             Niger    2005  Urban          29.51
+1835                             Niger    2005  Rural           5.00
+2009                            Rwanda    2005  Total           2.33
+2010                            Rwanda    2005  Urban           9.08
+2011                            Rwanda    2005  Rural           0.95
+2156                      Sierra Leone    2005  Total          11.28
+2157                      Sierra Leone    2005  Urban          17.18
+2158                      Sierra Leone    2005  Rural           7.83
+2393                              Togo    2005  Total           9.50
+2394                              Togo    2005  Urban          20.12
+2395                              Togo    2005  Rural           3.73
+2498                      Turkmenistan    2005  Total          79.86
+2499                      Turkmenistan    2005  Urban          88.01
+2500                      Turkmenistan    2005  Rural          72.62
+2552                            Uganda    2005  Total           7.88
+2553                            Uganda    2005  Urban          16.31
+2554                            Uganda    2005  Rural           6.16
+2651                          Viet Nam    2005  Total          85.03
+2652                          Viet Nam    2005  Urban          92.54
+2653                          Viet Nam    2005  Rural          82.21
+
+[72 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2005 Total ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+36                         Afghanistan    2005  Total          36.87
+120                            Armenia    2005  Total          86.30
+183                         Bangladesh    2005  Total          32.51
+231                             Belize    2005  Total          77.88
+270                              Benin    2005  Total           3.69
+402                       Burkina Faso    2005  Total           7.70
+456                            Burundi    2005  Total           5.92
+750   Democratic Republic of the Congo    2005  Total           4.14
+840                              Egypt    2005  Total          73.54
+945                           Eswatini    2005  Total          23.60
+1005                            Gambia    2005  Total           6.92
+1119                     Guinea-Bissau    2005  Total           6.20
+1302                              Iraq    2005  Total          89.70
+1500                        Madagascar    2005  Total          18.42
+1554                            Malawi    2005  Total          14.36
+1701                          Mongolia    2005  Total          69.27
+1815                             Nepal    2005  Total          55.24
+1833                             Niger    2005  Total           8.98
+2009                            Rwanda    2005  Total           2.33
+2156                      Sierra Leone    2005  Total          11.28
+2393                              Togo    2005  Total           9.50
+2498                      Turkmenistan    2005  Total          79.86
+2552                            Uganda    2005  Total           7.88
+2651                          Viet Nam    2005  Total          85.03
+
+
+--------------[ OUTPUT for 2005 Urban ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+37                         Afghanistan    2005  Urban          63.58
+121                            Armenia    2005  Urban          93.99
+184                         Bangladesh    2005  Urban          51.09
+232                             Belize    2005  Urban          79.41
+271                              Benin    2005  Urban           7.07
+403                       Burkina Faso    2005  Urban          23.16
+457                            Burundi    2005  Urban          24.44
+751   Democratic Republic of the Congo    2005  Urban           7.35
+841                              Egypt    2005  Urban          88.26
+946                           Eswatini    2005  Urban          47.78
+1006                            Gambia    2005  Urban          12.28
+1120                     Guinea-Bissau    2005  Urban           8.77
+1303                              Iraq    2005  Urban          95.07
+1501                        Madagascar    2005  Urban          36.18
+1555                            Malawi    2005  Urban          29.42
+1702                          Mongolia    2005  Urban          81.50
+1816                             Nepal    2005  Urban          83.56
+1834                             Niger    2005  Urban          29.51
+2010                            Rwanda    2005  Urban           9.08
+2157                      Sierra Leone    2005  Urban          17.18
+2394                              Togo    2005  Urban          20.12
+2499                      Turkmenistan    2005  Urban          88.01
+2553                            Uganda    2005  Urban          16.31
+2652                          Viet Nam    2005  Urban          92.54
+
+
+--------------[ OUTPUT for 2005 Rural ]----------------------
+
+
+                              Location  Period   Dim1  First Tooltip
+38                         Afghanistan    2005  Rural          29.02
+122                            Armenia    2005  Rural          72.67
+185                         Bangladesh    2005  Rural          25.71
+233                             Belize    2005  Rural          76.61
+272                              Benin    2005  Rural           1.39
+404                       Burkina Faso    2005  Rural           3.45
+458                            Burundi    2005  Rural           4.01
+752   Democratic Republic of the Congo    2005  Rural           2.22
+842                              Egypt    2005  Rural          62.42
+947                           Eswatini    2005  Rural          16.77
+1007                            Gambia    2005  Rural           1.10
+1121                     Guinea-Bissau    2005  Rural           4.62
+1304                              Iraq    2005  Rural          77.88
+1502                        Madagascar    2005  Rural          11.23
+1556                            Malawi    2005  Rural          11.69
+1703                          Mongolia    2005  Rural          48.88
+1817                             Nepal    2005  Rural          50.19
+1835                             Niger    2005  Rural           5.00
+2011                            Rwanda    2005  Rural           0.95
+2158                      Sierra Leone    2005  Rural           7.83
+2395                              Togo    2005  Rural           3.73
+2500                      Turkmenistan    2005  Rural          72.62
+2554                            Uganda    2005  Rural           6.16
+2653                          Viet Nam    2005  Rural          82.21
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]
