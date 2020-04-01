@@ -1,0 +1,136 @@
+#******************* Question - : 2001 :  ********************
+
+
+df2001 = df[df.Period == 2001]
+print("\n\n--------------[ OUTPUT for 2001 ]----------------------\n\n")
+print(df2001[['Location','Period','Dim1','First Tooltip']])
+
+df2001_total = df2001[df2001.Dim1 == 'Total']
+print("\n\n--------------[ OUTPUT for 2001 Total ]----------------------\n\n")
+print(df2001_total[['Location','Period','Dim1','First Tooltip']])
+
+df2001_urban = df2001[df2001.Dim1 == 'Urban']
+print("\n\n--------------[ OUTPUT for 2001 Urban ]----------------------\n\n")
+print(df2001_urban[['Location','Period','Dim1','First Tooltip']])
+
+df2001_rural = df2001[df2001.Dim1 == 'Rural']
+print("\n\n--------------[ OUTPUT for 2001 Rural ]----------------------\n\n")
+print(df2001_rural[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2001_total['Location']))
+print(i)
+
+i1 = np.arange(len(df2001_urban['Location']))
+print(i1)
+
+i2 = np.arange(len(df2001_rural['Location']))
+print(i2)
+
+#--------------- plot for 2001 ----------------------
+
+plt.title('Question - : 2001')
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(%) --- >")
+
+plt.plot(i,df2001_total['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Total")
+
+plt.plot(i1,df2001_urban['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Urban")
+
+plt.plot(i2,df2001_rural['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Rural")
+
+plt.legend()
+plt.show()
+
+
+
+--------------[ OUTPUT for 2001 ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+132        Armenia    2001  Total          83.81
+133        Armenia    2001  Urban          93.12
+134        Armenia    2001  Rural          67.00
+282          Benin    2001  Total           1.38
+283          Benin    2001  Urban           3.56
+284          Benin    2001  Rural           0.00
+414   Burkina Faso    2001  Total           6.03
+415   Burkina Faso    2001  Urban          23.31
+416   Burkina Faso    2001  Rural           2.10
+852          Egypt    2001  Total          67.55
+853          Egypt    2001  Urban          86.63
+854          Egypt    2001  Rural          53.25
+1512    Madagascar    2001  Total           5.35
+1513    Madagascar    2001  Urban          19.53
+1514    Madagascar    2001  Rural           0.00
+1566        Malawi    2001  Total          16.22
+1567        Malawi    2001  Urban          34.12
+1568        Malawi    2001  Rural          13.13
+2021        Rwanda    2001  Total           1.49
+2022        Rwanda    2001  Urban           7.63
+2023        Rwanda    2001  Rural           0.34
+2510  Turkmenistan    2001  Total          72.58
+2511  Turkmenistan    2001  Urban          83.77
+2512  Turkmenistan    2001  Rural          62.99
+2564        Uganda    2001  Total           3.64
+2565        Uganda    2001  Urban          10.32
+2566        Uganda    2001  Rural           2.45
+
+
+--------------[ OUTPUT for 2001 Total ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+132        Armenia    2001  Total          83.81
+282          Benin    2001  Total           1.38
+414   Burkina Faso    2001  Total           6.03
+852          Egypt    2001  Total          67.55
+1512    Madagascar    2001  Total           5.35
+1566        Malawi    2001  Total          16.22
+2021        Rwanda    2001  Total           1.49
+2510  Turkmenistan    2001  Total          72.58
+2564        Uganda    2001  Total           3.64
+
+
+--------------[ OUTPUT for 2001 Urban ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+133        Armenia    2001  Urban          93.12
+283          Benin    2001  Urban           3.56
+415   Burkina Faso    2001  Urban          23.31
+853          Egypt    2001  Urban          86.63
+1513    Madagascar    2001  Urban          19.53
+1567        Malawi    2001  Urban          34.12
+2022        Rwanda    2001  Urban           7.63
+2511  Turkmenistan    2001  Urban          83.77
+2565        Uganda    2001  Urban          10.32
+
+
+--------------[ OUTPUT for 2001 Rural ]----------------------
+
+
+          Location  Period   Dim1  First Tooltip
+134        Armenia    2001  Rural          67.00
+284          Benin    2001  Rural           0.00
+416   Burkina Faso    2001  Rural           2.10
+854          Egypt    2001  Rural          53.25
+1514    Madagascar    2001  Rural           0.00
+1568        Malawi    2001  Rural          13.13
+2023        Rwanda    2001  Rural           0.34
+2512  Turkmenistan    2001  Rural          62.99
+2566        Uganda    2001  Rural           2.45
+[0 1 2 3 4 5 6 7 8]
+[0 1 2 3 4 5 6 7 8]
+[0 1 2 3 4 5 6 7 8]
